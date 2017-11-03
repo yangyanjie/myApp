@@ -2,13 +2,21 @@
   <div class="hello">
   	<index-header />
   	<index-swiper />
+
   	<index-iconSwiper />
+
+  	<index-listItem />
+
   </div>
 </template>
 <script>
 	import header from "./Header";
 	import swiper from "./Swiper";
+
 	import iconSwiper from "./IconSwiper";
+
+
+	import listItem from "./listItem";
 
 	export default {
 	  data () {
@@ -19,13 +27,19 @@
 	  components:{
 	  	"index-header":header,
 	  	"index-swiper":swiper,
-	  	"index-iconSwiper":iconSwiper
+
+	  	"index-iconSwiper":iconSwiper,
+
+	  	"index-listItem":listItem,
+
 	  }
 	  
 	}
 </script>
+
 <style>
 	.hello{
 		background:#f5f5f5;
 	}
+
 </style>
