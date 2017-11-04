@@ -4,7 +4,6 @@
   	<index-swiper />
   	<index-iconSwiper />
   	<index-listItem />
-	<index-listItem />
 	<index-triplist />
   </div>
 </template>
