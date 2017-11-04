@@ -1,0 +1,73 @@
+{
+	"ret":true,
+	"data":{
+		"list": [
+			{
+				"id": 1,
+				"img": "http://img1.qunarzz.com/p/tts2/1706/b9/68688c37bace6c02.jpg_110x110_32e4422c.jpg",
+				"alt": "【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游",
+				"tit": "明日可定",
+				"local": "北京出发",
+				"price":"无自费",
+				"shop": "无购物",
+				"unitPrice": "200",
+				"sold": "已售2061"
+			},
+			{
+				"id": 2,
+				"img": "http://img1.qunarzz.com/p/tts2/1706/b9/68688c37bace6c02.jpg_110x110_32e4422c.jpg",
+				"alt": "【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游",
+				"tit": "明日可定",
+				"local": "北京出发",
+				"price":"无自费",
+				"shop": "无购物",
+				"unitPrice": "200",
+				"sold": "已售2061"
+			},
+			{
+				"id": 3,
+				"img": "http://img1.qunarzz.com/p/tts2/1706/b9/68688c37bace6c02.jpg_110x110_32e4422c.jpg",
+				"alt": "【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游",
+				"tit": "明日可定",
+				"local": "北京出发",
+				"price":"无自费",
+				"shop": "无购物",
+				"unitPrice": "200",
+				"sold": "已售2061"
+			},
+			{
+				"id": 4,
+				"img": "http://img1.qunarzz.com/p/tts2/1706/b9/68688c37bace6c02.jpg_110x110_32e4422c.jpg",
+				"alt": "【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游",
+				"tit": "明日可定",
+				"local": "北京出发",
+				"price":"无自费",
+				"shop": "无购物",
+				"unitPrice": "200",
+				"sold": "已售2061"
+			},
+			{
+				"id": 5,
+				"img": "http://img1.qunarzz.com/p/tts2/1706/b9/68688c37bace6c02.jpg_110x110_32e4422c.jpg",
+				"alt": "【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游",
+				"tit": "明日可定",
+				"local": "北京出发",
+				"price":"无自费",
+				"shop": "无购物",
+				"unitPrice": "200",
+				"sold": "已售2061"
+			},
+			{
+				"id": 6,
+				"img": "http://img1.qunarzz.com/p/tts2/1706/b9/68688c37bace6c02.jpg_110x110_32e4422c.jpg",
+				"alt": "【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游",
+				"tit": "明日可定",
+				"local": "北京出发",
+				"price":"无自费",
+				"shop": "无购物",
+				"unitPrice": "200",
+				"sold": "已售2061"
+			}
+		]
+	}
+}
