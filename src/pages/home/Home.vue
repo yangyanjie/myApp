@@ -31,12 +31,8 @@
 	  components:{
 	  	"index-header":header,
 	  	"index-swiper":swiper,
-
-			"index-triplist":triplist
-
-
+		"index-triplist":triplist,
 	  	"index-iconSwiper":iconSwiper,
-
 	  	"index-listItem":listItem,
 
 
