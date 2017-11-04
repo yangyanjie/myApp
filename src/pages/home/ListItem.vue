@@ -40,11 +40,12 @@
 <style scoped>
 	.mp-listitem-box{
 		overflow: hidden;
+		background: #f5f5f5;
 	}
 	.mp-listitem-con {
 		width:100%;
 		background:#fff;
-		border-top:1px solid #ccc;
+		border-top:1px solid #f5f5f5;
 	}
 	.mp-listentrance-item{
 	    width: 50%;
@@ -58,7 +59,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		box-sizing:border-box;
-		border-right:1px solid #ccc;
+		border-right:1px solid #f5f5f5;
 	}
 	.listentrance-second{
 		border-right:0;
@@ -79,7 +80,7 @@
 	    color: #212121;
 	    font-size: .28rem;
 	    box-sizing:border-box;
-		border-right:1px solid #ccc;
+		border-right:1px solid #f5f5f5;
 	}
 	.mp-activity-big{
 		border-right:0;

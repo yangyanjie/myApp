@@ -3,7 +3,9 @@
   	<index-header />
   	<index-swiper />
 		<index-listItem />
+		<index-hotSeight />
 		<index-triplist />
+  
   </div>
 </template>
 <script>
@@ -12,6 +14,7 @@
 	import triplist from "./TripList";
 	
 	import listItem from "./listItem";
+	import hotSeight from "./HotSeight"
 	export default {
 	  data () {
 	    return {
@@ -23,12 +26,11 @@
 	  	"index-swiper":swiper,
 			"index-triplist":triplist,
 	  	"index-listItem":listItem,
+	  	"index-hotSeight": hotSeight
 	  }
 	  
 	}
 </script>
 <style scoped>
-	.hello{
-		background:#ccc;
-	}
+	
 </style>
