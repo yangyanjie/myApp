@@ -25,8 +25,8 @@
 	  	"index-header":header,
 	  	"index-swiper":swiper,
 	  	"index-iconSwiper":iconSwiper,
-		"index-triplist":triplist,
 	  	"index-listItem":listItem,
+		"index-triplist":triplist,
 	  }	  
 	}
 </script>

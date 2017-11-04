@@ -22,8 +22,8 @@
 			</li>
 			<li class="mp-activity-item mp-activity-big">
 				<div class="mp-activity-introduce">
-					<p class="mp-activity-change">精选温泉</p>
-					<i class="mp-activity-spr">5折泡温泉</i>
+					<p class="mp-activity-change">金秋大促</p>
+					<i class="mp-activity-spr">门票1元起</i>
 				</div>
 				<div class="mp-activity-imag">
 					<img class="mp-activity-pic" src="../images/2.png" alt="" />
