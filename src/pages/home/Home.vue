@@ -11,14 +11,8 @@
 <script>
 	import header from "./Header";
 	import swiper from "./Swiper";
-
 	import triplist from "./TripList";
-	
-
-
 	import iconSwiper from "./IconSwiper";
-
-
 	import listItem from "./listItem";
 
 
@@ -34,8 +28,6 @@
 		"index-triplist":triplist,
 	  	"index-iconSwiper":iconSwiper,
 	  	"index-listItem":listItem,
-
-
 	  }
 	  
 	}
