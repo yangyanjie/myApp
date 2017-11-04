@@ -1,10 +1,10 @@
 <template>
   <swiper :options="swiperOption">
-    <swiper-slide>
-      <div class="slide-container">
-        <img class="slide-img" src="../images/index-img1.jpg" alt="">
-      </div>
-    </swiper-slide>
+      <swiper-slide>
+        <div class="slide-container">
+          <img class="slide-img" src="../images/index-img1.jpg" alt="">
+        </div>
+      </swiper-slide>
     <swiper-slide>
       <div class="slide-container">
         <img class="slide-img" src="../images/index-img2.jpg" alt="">
