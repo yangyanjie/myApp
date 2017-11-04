@@ -71,6 +71,7 @@
 	    width: 100%;
 	    margin-top: .2rem;
 	    background-color: #fff;
+		border-top:1px solid #ccc;
 	}
 	.mp-activity-item {
 	    width: 50%;
