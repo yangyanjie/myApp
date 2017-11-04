@@ -1,6 +1,6 @@
 <template>
   	<header class="mp-header">
-  		<a href="#" class="mp-header-left iconfont icon-back" ></a>
+  		<a href="#" class="mp-header-left iconfont icon-return" ></a>
   		<div class="mp-header-title" mp-role="title">
   			<a href="#" class="mp-linkarea">
   				<i class="mp-iconsearch iconfont icon-seach"></i>
