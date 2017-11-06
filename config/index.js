@@ -5,6 +5,8 @@
 
 const path = require('path')
 
+
+
 module.exports = {
   build: {
     env: require('./prod.env'),
@@ -31,7 +33,15 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/api': { 
+            target: 'http://localhost:8080/#/tour/api/list.json', 
+            changeOrigin: true, 
+            pathRewrite: { 
+            '^/api': "/" 
+            } 
+        } 
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)
