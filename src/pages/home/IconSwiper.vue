@@ -231,7 +231,21 @@
     methods:{
     	handleClick: function() {
     		alert(1)
+    	},
+    	getIndexData: function() {
+    		this.$axios("/static/iconSwiper.json")
+    			.then(this.handleDataSucc)
+    			.catch(this.handleDataErr)
+    	},
+    	handleDataSucc: function(res) {
+    		console.log(res.data)
+    	},
+    	handleDataErr: function(err) {
+    		console.log(err)
     	}
+    },
+    mouted() {
+    	this.getIndexData()
     }
   }
 </script>
