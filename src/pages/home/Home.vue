@@ -2,9 +2,9 @@
   <div class="hello">
   	<index-header />
   	<index-swiper :swiperInfo="swiperInfo" />
-		<index-listItem />
-		<index-hotSeight :hotListInfo="hotListInfo"/>
-		<index-triplist :tripListInfo="tripListInfo"/>
+	<index-listItem />
+	<index-hotSeight :hotListInfo="hotListInfo"/>
+	<index-triplist :tripListInfo="tripListInfo"/>
   
   </div>
 </template>
