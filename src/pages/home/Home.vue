@@ -1,26 +1,37 @@
 <template>
   <div class="hello">
   	<index-header />
-  	<index-swiper v-bind:swiperInfo="swiperInfo" />
+  	<index-swiper :swiperInfo="swiperInfo" />
 		<index-listItem />
-		<index-hotSeight />
-		<index-triplist />
+		<index-hotSeight :hotListInfo="hotListInfo"/>
+		<index-triplist :tripListInfo="tripListInfo"/>
   
   </div>
 </template>
 <script>
-	import header from "./Header";
-	import swiper from "./Swiper";
-	import triplist from "./TripList";
-	import listItem from "./listItem";
-	import hotSeight from "./HotSeight";
+	import header from "./components/Header"
+	import swiper from "./components/Swiper"
+	import triplist from "./components/TripList"
+	import listItem from "./components/listItem"
+	import hotSeight from "./components/HotSeight"
 	import axios from "axios"
+	import { AJAX_GET_DATA } from "./types.js"
+	import { mapState,mapActions } from "vuex"
 	export default {
-	  data () {
-	    return {
-	      swiperInfo: []
-	    }
-	  },
+
+		computed: mapState({
+			swiperInfo: (state) => {
+				return state.home.swiperInfo;
+			},
+			hotListInfo: (state) => {
+				console.log(state.home.hotListInfo);
+				return state.home.hotListInfo;
+			},
+			tripListInfo: (state) => {
+				return state.home.tripListInfo;
+			}
+		}),
+
 	  components:{
 	  	"index-header":header,
 	  	"index-swiper":swiper,
@@ -28,22 +39,16 @@
 	  	"index-listItem":listItem,
 	  	"index-hotSeight": hotSeight
 		},
+
 		mounted() {
-			this.getHomeData();
+			!this.swiperInfo.length && this.getHomeData();
 		},
-		methods: {
-			getHomeData() {
-				axios.get("/static/home.json")
-				.then(this.handleGetDataSucc.bind(this))
-			},
-			handleGetDataSucc(res){
-					const data = res.data.data;
-					this.swiperInfo = data.swiperInfo;
-					console.log(this.swiperInfo)
+
+		methods: mapActions({
+			getHomeData: (dispatch)=> {
+				dispatch(AJAX_GET_DATA);
 			}
-		},
-		
-	  
+		})
 	}
 </script>
 <style scoped>

@@ -2,39 +2,18 @@
   <div class="lazy-load" id="weekend-trip">
     <h2 class="mp-modtitle">周末去哪儿</h2>
     <div>
-      <div class="mp-product-item">
-        <a href="#" title="北京温泉排行榜" class="mp-fulllink">
+      <div class="mp-product-item" v-for="item in tripListInfo" :key="item.id">
+        <router-link :to="item.link" class="mp-fulllink">
           <div class="product-imgcontainer image-ready">
-            <img src="http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg" alt="北京温泉排行榜">
+            <img :src="item.imgUrl" :alt="item.title">
           </div>
           <div class="mp-product-info">
-            <p class="product-name">北京温泉排行榜</p>
-            <p class="product-desc">细数北京温泉，温暖你的冬天</p>
+            <p class="product-name">{{item.title}}</p>
+            <p class="product-desc">{{item.desc}}</p>
           </div>
-        </a>
+        </router-link>
       </div>
-      <div class="mp-product-item">
-        <a href="#" title="寻找北京的皇城范儿" class="mp-fulllink">
-          <div class="product-imgcontainer image-ready">
-            <img src="http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg" alt="寻找北京的皇城范儿">
-          </div>
-          <div class="mp-product-info">
-            <p class="product-name">寻找北京的皇城范儿</p>
-            <p class="product-desc">数百年的宫廷庙宇，至今依旧威严霸气</p>
-          </div>
-        </a>
-      </div>
-      <div class="mp-product-item">
-        <a href="#" title="北京温泉排行榜" class="mp-fulllink">
-          <div class="product-imgcontainer image-ready">
-            <img src="http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg" alt="北京必游TOP10">
-          </div>
-          <div class="mp-product-info">
-            <p class="product-name">北京必游TOP10</p>
-            <p class="product-desc">来北京必去的景点非这些地方莫属</p>
-          </div>
-        </a>
-      </div>
+      
       <div class="mp-price-desc">
         <span class="iconfont icon-xiaotanhao"></span>
         <div class="mp-price-desc-info">
@@ -47,7 +26,7 @@
 </template>
 <script>
   export default {
-   
+   props:['tripListInfo']
   }
 </script>
 <style>

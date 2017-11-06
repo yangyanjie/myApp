@@ -2,9 +2,11 @@
   <div class="home-swiper">
     <swiper :options="swiperOption">
       <swiper-slide  v-for="item in swiperInfo" :key="item.id">
-        <div class="slide-container">
-          <img class="slide-img" :src="item.imgUrl" alt="">
-        </div>
+        <router-link :to="item.link">
+          <div class="slide-container">
+            <img class="slide-img" :src="item.imgUrl" alt="">
+          </div>
+        </router-link>
       </swiper-slide>
       <div class="home-swiper-pagination"  slot="pagination"></div>
     </swiper> 
@@ -35,6 +37,12 @@
   }
 </script>
 <style>
+  .home-swiper {
+    width: 100%;
+    height: 0;
+    padding-bottom: 31.25%; 
+
+  }
   .home-swiper .home-swiper-pagination {
     position: absolute;
     left: 50%;
