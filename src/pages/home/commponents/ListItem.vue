@@ -17,7 +17,7 @@
 					<i class="mp-activity-spr">5折泡温泉</i>
 				</div>
 				<div class="mp-activity-imag">
-					<img class="mp-activity-pic" src="../images/a.jpg" alt="" />
+					<img class="mp-activity-pic" src="../../images/a.jpg" alt="" />
 				</div>
 			</li>
 			<li class="mp-activity-item mp-activity-big">
@@ -26,7 +26,7 @@
 					<i class="mp-activity-spr">5折泡温泉</i>
 				</div>
 				<div class="mp-activity-imag">
-					<img class="mp-activity-pic" src="../images/2.png" alt="" />
+					<img class="mp-activity-pic" src="../../images/2.png" alt="" />
 				</div>
 			</li>
 		</ul>

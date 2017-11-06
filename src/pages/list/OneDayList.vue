@@ -4,7 +4,7 @@
 	</div>
 </template>
 <script>
-	import listCon from "./ListCon";
+	import listCon from "./commponents/ListCon";
 
 	export default {
 	  data () {
