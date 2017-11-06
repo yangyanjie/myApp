@@ -18,7 +18,7 @@
 		    </span>
 		</div>
 		<div class="mp-tagfilter-list-Wrap">
-			<div class="mp-tagfilter-list" mp-role="listCon" style="overflow: hidden;">
+			<div class="mp-tagfilter-list" mp-role="listCon" style="overflow: hidden; height: .8rem;">
 			    <scroller>
 		  			<ul  class="mp-tagfilter-inner clrfix js-tagfilter-inner" mp-role="sightList" style="width: 4913px; transition-property: transform; transform-origin: 0px 0px 0px; transform: translate(0px, 0px) translateZ(0px);">
 			    		<li v-for="item in listNav" key="item.id" class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="" data-click-from-value="八达岭长城">
@@ -30,73 +30,14 @@
 					</h3>			    	
 				</scroller>
 			</div>
-			<div class="mp-tagfilter-list js-mp-tagfilter-list" mp-role="listCon" style="overflow:hidden">
-	    		<ul class="mp-tagfilter-inner clearfix" mp-role="sighList" style="width:4835px; transition-property: transform; transform-origin: 0px 0px 0px 0px; transform: translate(0px, 0px) scale(1) translateZ(0px)" >
-	    			<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
+			<div class="mp-tagfilter-list mp-tagfilter-list-wrap js-mp-tagfilter-list" mp-role="listCon" style="overflow:auto; width: 102%">
+	    		<ul class="mp-tagfilter-inner js-mp-tagfilter-inner clearfix" mp-role="sighList" style="transition-property: transform;  transform-origin: 0px 0px 0px 0px; display: none; transform: translate(0px, 0px) scale(1) translateZ(0px)" >
+	    			<li v-for="item in listNav" class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
 	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
+	    					{{item.tit}}
 	    				</span>
       				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
-      				<li class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					八达岭长城
-	    				</span>
-      				</li>
+      				
 	    		</ul>
 			</div>
 			<div class="mp-tagfilter-expand mpf-border-left">
@@ -188,15 +129,18 @@
 				var oNav = document.querySelector(".js-tagfilter-inner");
 				var oTit = document.querySelector(".js-tagfilter-title");
 				var oChoose = document.querySelector(".js-mp-tagfilter-list");
+				var oNavList = document.querySelector(".js-mp-tagfilter-inner");
 
 				if(oNav.style.display === "none") {
 					oNav.style.display = "block";
 					oTit.style.display = "none";
 					oChoose.style.display="none";
+					oNavList.style.display="none";
 				}else{
 					oNav.style.display = "none";
 					oTit.style.display = "block";
 					oChoose.style.display="block";
+					oNavList.style.display="block";
 				}
 			}
 			
@@ -245,25 +189,19 @@
 	    font-variant: normal;
 	    text-transform: none;
 	    line-height: 1;
-	    -webkit-font-smoothing: antialiased;
-	    -moz-osx-font-smoothing: grayscale;
 	}
 	.mp-header-title {
 	    padding: 0 .6rem 0 .2rem;
 	}
 	.mp-header-title {
-	    -webkit-box-sizing: border-box;
 	    box-sizing: border-box;
 	    box-flex: 1;
-	    -webkit-box-flex: 1;
-	    -moz-box-flex: 1;
-	    -ms-flex: 1;
 	    position: relative;
 	    height: .6rem;
 	    margin: .14rem 0;
 	    background: #fff;
+	   	border-radius: .06rem;
 	    line-height: .6rem;
-	    border-radius: .06rem;
 	}
 	.mp-header-right {
 	    display: inline-block;
@@ -296,8 +234,8 @@
 	.mp-header-right {
 	    display: inline-block;
 	    height: .88rem;
-	    line-height: .88rem;
 	    padding: 0 .1rem;
+	    line-height: .88rem;
 	}
 	.mp-search-submit {
 	    display: inline-block;
@@ -306,19 +244,21 @@
 	    color: #fff;
 	    font-size: .28rem;
 	}
-	.mp-tagfilter-list {
-	    overflow: hidden;
-	    margin-right: .7rem;
-	    height: .68rem;
-	    max-height: 6rem;
-	    background: #e5e7e8;
-	    padding: .08rem .12rem;
-	    background:red;
-	}
+	
 	.mp-tagfilter-item {
 	    float: left;
 	    position: relative;
-	    padding: .04rem .08rem;
+	    padding: .08rem .08rem;
+	}
+	.mp-tagfilter-list-wrap {
+		position:absolute;
+		left:0;
+		top: .7rem;
+		background:#ccc;
+		z-index:9;
+	}
+	.mp-tagfilter-list-wrap ul{
+		padding-right: .1rem;
 	}
 	.mp-tagfilter-name {
 	    display: block;
@@ -328,12 +268,8 @@
 	    color: #212121;
 	    font-size: .26rem;
 	    line-height: .56rem;
-	    -webkit-border-radius: .04rem;
-	    -moz-border-radius: .04rem;
 	    border-radius: .04rem;
 	}
-	
-	
 	.mp-tagfilter-expand {
 	    position: absolute;
 	    z-index: 3;
@@ -388,10 +324,6 @@
 	.mp-list-bookingtext {
 	    display: block;
 	    font-size: .24rem;
-	    -webkit-transform: scale(.83);
-	    -moz-transform: scale(.83);
-	    -ms-transform: scale(.83);
-	    -o-transform: scale(.83);
 	    transform: scale(.83);
 	}
 	.mp-list-productinfo {
@@ -469,17 +401,10 @@
 	    height: auto;
 	    box-shadow: 0 0 0.2rem rgba(0,0,0,.15);
 	}
-	.mp-tagfilter-list {
-	    overflow: hidden;
-	    margin-right: .6rem;
-	    height: .68rem;
-	    max-height: 6rem;
-	    padding: .08rem .12rem;
-	}
-
 	.mp-tagfilter-unfold .mp-tagfilter-inner {
 	    width: auto !important;
 	    padding-bottom: .2rem;
+	    padding-top: .6rem!important;
 	}
 	.mp-tagfilter-unfold .mp-tagfilter-item {
 	    padding-top: .08rem;
@@ -493,32 +418,9 @@
 	    color: #212121;
 	    font-size: .26rem;
 	    line-height: .56rem;
-	    -webkit-border-radius: .04rem;
-	    -moz-border-radius: .04rem;
 	    border-radius: .04rem;
 	}
-	.mp-tagfilter-unfold .mp-tagfilter-list {
-	    -webkit-box-sizing: border-box;
-	    -moz-box-sizing: border-box;
-	    box-sizing: border-box;
-	    overflow: auto;
-	    position: absolute;
-	    top: .8rem;
-	    left: 0;
-	    margin-right: 0;
-	    width: 100%;
-	    height: auto;
-	    -webkit-box-shadow: 0 0 0.2rem rgba(0,0,0,.15);
-	    -moz-box-shadow: 0 0 .2rem rgba(0,0,0,.15);
-	    box-shadow: 0 0 0.2rem rgba(0,0,0,.15);
-	}
-	.mp-tagfilter-list {
-	    overflow: hidden;
-	    margin-right: .6rem;
-	    height: .68rem;
-	    max-height: 6rem;
-	    padding: .08rem .12rem;
-	}
+	
 	.mp-tagfilter-unfold .mp-tagfilter-list {
 	    overflow: auto;
 	    margin-right: 0;
@@ -527,6 +429,6 @@
 	}
 	.mp-tagfilter-list {
 	    max-height: 6rem;
-	    padding: .08rem .12rem;
+	    padding: .03rem .12rem;
 	}
 </style>
