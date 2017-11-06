@@ -230,7 +230,7 @@
     },
     methods:{
     	handleClick: function() {
-    		alert(1)
+    		// alert(1)
     	},
     	getIndexData: function() {
     		this.$axios("/static/iconSwiper.json")
@@ -244,7 +244,7 @@
     		console.log(err)
     	}
     },
-    mouted() {
+    mounted: function() {
     	this.getIndexData()
     }
   }
