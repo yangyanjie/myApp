@@ -31,7 +31,7 @@
 				            </div>
 				            <div class="mp-category-item" data-click="ts_type_nav" data-click-from-value="故宫"
 				            data-click-from-index="2" data-click-dist-city="北京">
-				                <a href="http://sale.piao.qunar.com/touch/topic/mk/t_1135.htm?in_track=appsylmgugong&amp;cat=from_area%3Dts_type_nav%26from_index%3D2%26from_value%3D%25E6%2595%2585%25E5%25AE%25AB%26dist_city%3D%25E5%258C%2597%25E4%25BA%25AC"
+				                <router-link to="palace"
 				                title="故宫" mp-role="analytics" data-params="from_area=ts_type_nav&amp;from_index=2&amp;from_value=故宫&amp;dist_city=北京">
 				                    <div class="mp-category-img-container">
 				                        <section class="iconfont-img iconfont icon-jingse"></section>
@@ -39,7 +39,7 @@
 				                    <div class="keywords">
 				                        故宫
 				                    </div>
-				                </a>
+				                </router-link>
 				            </div>
 				            <div class="mp-category-item" data-click="ts_type_nav" data-click-from-value="一日游"
 				            data-click-from-index="3" data-click-dist-city="北京">
