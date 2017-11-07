@@ -4,10 +4,18 @@ import router from './router'
 import store from './vuex'
 import FastClick from 'fastclick';
 import VueAwesomeSwiper from "vue-awesome-swiper";
+import VueScroller from 'vue-scroller'
+import axios from "axios"
+
 FastClick.attach(document.body);
+
 Vue.config.productionTip = false;
 Vue.use(VueAwesomeSwiper);
+Vue.use(VueScroller);
 
+//vue
+/* eslint-disable no-new */
+Vue.prototype.$axios = axios;
 
 new Vue({
   el: '#app',
@@ -16,3 +24,4 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+

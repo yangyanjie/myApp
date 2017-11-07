@@ -2,17 +2,17 @@
   <swiper :options="swiperOption">
       <swiper-slide>
         <div class="slide-container">
-          <img class="slide-img" src="../images/index-img1.jpg" alt="">
+          <img class="slide-img" src="../../images/index-img1.jpg" alt="">
         </div>
       </swiper-slide>
     <swiper-slide>
       <div class="slide-container">
-        <img class="slide-img" src="../images/index-img2.jpg" alt="">
+        <img class="slide-img" src="../../images/index-img2.jpg" alt="">
       </div>
     </swiper-slide>
     <swiper-slide>
       <div class="slide-container">
-        <img class="slide-img" src="../images/index-img3.jpg" alt="">
+        <img class="slide-img" src="../../images/index-img3.jpg" alt="">
       </div>
     </swiper-slide>
     <div class="swiper-pagination"  slot="pagination"></div>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hello">
   	<palace-header />
   	<palace-here :palaceData="palaceData"/>
   </div>
@@ -39,7 +39,8 @@
 	}
 </script>
 
-<style>
-	
-
+<style scoped>
+	.hello{
+		background:#ccc;
+	}
 </style>
