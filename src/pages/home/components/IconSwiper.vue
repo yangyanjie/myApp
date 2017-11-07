@@ -1,47 +1,29 @@
 <template>
 	<div class="mp-category-container mpw-swipe" id="category-container" >
-	<swiper :options="swiperOption">
-	    <swiper-slide >
-	    	<div class="mp-category-container mpw-swipe" id="category-container" data--swipe="[object Object]">
-			    <div v-for="item in iconSwiperInfoA" :key="item.id"  class="mp-category-item" data-click="ts_type_nav" data-click-from-value="景点门票" data-click-from-index="0" data-click-dist-city="北京" @click="handleClick">
-			        <router-link :to="item.link">
-			        	<a href="#" title="" mp-role="analytics" data-params="from_area=ts_type_nav&amp;from_index=0&amp;from_value=景点门票&amp;dist_city=北京">
-				            <div class="mp-category-img-container ">
-				                <img :src="item.src" :alt="item.title" style="opacity: 1;">
-				            </div>
-				            <div class="keywords">
-				                {{item.title}}
-				            </div>
-			        	</a>
-			        </router-link>	
-			    </div>
-			</div>
-	    </swiper-slide>
-	    <swiper-slide>
-		   <div class="mp-category-container mpw-swipe" id="category-container" data--swipe="[object Object]">
-			    <div v-for="item in iconSwiperInfoB" :key="item.id"  class="mp-category-item" data-click="ts_type_nav" data-click-from-value="景点门票" data-click-from-index="0" data-click-dist-city="北京">
-			        <router-link :to="item.link">
-			        	<a href="#" title="" mp-role="analytics" data-params="from_area=ts_type_nav&amp;from_index=0&amp;from_value=景点门票&amp;dist_city=北京">
-				            <div class="mp-category-img-container ">
-				                <img :src="item.src" :alt="item.title" style="opacity: 1;">
-				            </div>
-				            <div class="keywords">
-				                {{item.title}}
-				            </div>
-			        	</a>
-			        </router-link>	
-			    </div>
-			</div>
-	    </swiper-slide>
-	    <div class="swiper-pagination"  slot="pagination"></div>
-    </swiper>
+		<swiper :options="swiperOption">
+			<swiper-slide v-for="(item, index) in swiperInfo" :key="index" >
+				<div class="mp-category-container mpw-swipe" id="category-container">
+					<div v-for="innerItem in item" :key="innerItem.id"  class="mp-category-item">
+						<router-link :to="innerItem.link">
+							<div class="mp-category-img-container ">
+								<img :src="innerItem.src" :alt="innerItem.title" style="opacity: 1;">
+							</div>
+							<div class="keywords">
+								{{innerItem.title}}
+							</div>
+						</router-link>	
+					</div>
+				</div>
+			</swiper-slide>
+			<div class="swiper-pagination"  slot="pagination"></div>
+		</swiper>
     </div>
 </template>
 <script>
 	
 
   export default {
-  	props: ["iconSwiperInfoA", "iconSwiperInfoB"],
+  	props: ["iconSwiperInfo"],
     data() {
       return {
         swiperOption: {
@@ -51,11 +33,23 @@
           observeParents: true,
         }
       }
-    },
+	},
+	computed: {
+		swiperInfo() {
+			const result = [];
+			this.$store.state.home.iconSwiperInfo.forEach((value,index) => {
+				 let page = Math.floor(index/8);
+				if(!result[page]) {
+					result[page] = [];
+				}
+				result[page].push(value);
+				
+			});
+			return result;
+		}
+	},
     methods: {
-    	handleClick: function() {
-    		alert(1)
-    	}
+
     }
     
   }

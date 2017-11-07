@@ -98,7 +98,7 @@
                 "imgUrl": "http://img1.qunarzz.com/sight/source/1509/28/1bb74b851279e6.jpg_r_640x214_64ebf0ee.jpg"
             }
         ],
-        "iconSwiperA": [
+        "iconSwiper": [
             {
                 "id": 1,
                 "src": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png",
@@ -146,9 +146,7 @@
                 "src": "http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png",
                 "title": "泡温泉",
                 "link": "/tour"
-            }],
-
-        "iconSwiperB":[
+            },
             {
                 "id": 9,
                 "src": "http://img1.qunarzz.com/piao/fusion/1611/7f/b1ea3c8c7fb6db02.png",

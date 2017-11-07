@@ -17,7 +17,8 @@ export default new Router({
       path: '/activity',
       name: 'Activity',
       component: Activity
-    } 
+    },
+    { 
     
       path: '/tour',
       name: 'tour',

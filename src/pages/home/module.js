@@ -10,12 +10,10 @@ export default {
     },
     mutations: {
         [SET_DATA](state,payload) {
-           
             state.swiperInfo = payload.swiperInfo;
             state.hotListInfo = payload.hotListInfo;
             state.tripListInfo = payload.tripListInfo;
-            state.iconSwiperInfoA = payload.iconSwiperA;
-            state.iconSwiperInfoB = payload.iconSwiperB;
+            state.iconSwiperInfo = payload.iconSwiper;
         }
     },
     actions: {

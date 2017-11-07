@@ -2,7 +2,7 @@
 	<div class="hello">
 	  	<index-header />
 	  	<index-swiper :swiperInfo="swiperInfo" />
-		<index-iconSwiper :iconSwiperInfoA="iconSwiperInfoA" :iconSwiperInfoB="iconSwiperInfoB" />
+		<index-iconSwiper/>
 		<index-listItem />
 		<index-hotSeight :hotListInfo="hotListInfo"/>
 		<index-triplist :tripListInfo="tripListInfo"/>
@@ -26,17 +26,13 @@
 				return state.home.swiperInfo;
 			},
 			hotListInfo: (state) => {
-				console.log(state.home.hotListInfo);
 				return state.home.hotListInfo;
 			},
 			tripListInfo: (state) => {
 				return state.home.tripListInfo;
 			},
-			iconSwiperInfoA: (state) => {
-				return state.home.iconSwiperInfoA;
-			},
-			iconSwiperInfoB: (state) => {
-				return state.home.iconSwiperInfoB;
+			iconSwiperInfo: (state) => {
+				return state.home.iconSwiperInfo;
 			}
 		}),
 
