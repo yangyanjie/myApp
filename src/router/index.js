@@ -15,7 +15,7 @@ export default new Router({
     },{
       path: '/palace',
       name: 'palace',
-      component: Home
+      component: Palace
     },
     {
       path: '/tour',
