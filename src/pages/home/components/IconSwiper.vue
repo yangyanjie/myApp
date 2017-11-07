@@ -20,39 +20,23 @@
     </div>
 </template>
 <script>
-	
+	import {mapGetters} from 'vuex'
 
-  export default {
-  	props: ["iconSwiperInfo"],
-    data() {
-      return {
-        swiperOption: {
-          direction: 'horizontal',
-          autoHeight: true,
-          pagination: '.swiper-pagination',
-          observeParents: true,
-        }
-      }
-	},
-	computed: {
-		swiperInfo() {
-			const result = [];
-			this.$store.state.home.iconSwiperInfo.forEach((value,index) => {
-				 let page = Math.floor(index/8);
-				if(!result[page]) {
-					result[page] = [];
+  	export default {
+		props: ["iconSwiperInfo"],
+		data() {
+			return {
+				swiperOption: {
+				direction: 'horizontal',
+				autoHeight: true,
+				pagination: '.swiper-pagination',
+				observeParents: true,
 				}
-				result[page].push(value);
-				
-			});
-			return result;
-		}
-	},
-    methods: {
-
-    }
+			}
+		},
+		computed: mapGetters(['swiperInfo']),
     
-  }
+  	}
 </script>
 <style>
 	.mp-category-container {
