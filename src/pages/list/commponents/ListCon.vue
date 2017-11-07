@@ -19,7 +19,7 @@
 		</div>
 		<div class="mp-tagfilter-list-Wrap">
 			<div class="mp-tagfilter-list" mp-role="listCon" style="overflow: hidden; height: .8rem;">
-			    <scroller>
+			    <!-- <scroller> -->
 		  			<ul  class="mp-tagfilter-inner clrfix js-tagfilter-inner" mp-role="sightList" style="width: 4913px; transition-property: transform; transform-origin: 0px 0px 0px; transform: translate(0px, 0px) translateZ(0px);">
 			    		<li v-for="item in listNav" key="item.id" class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="" data-click-from-value="八达岭长城">
 			      		<span class="mp-tagfilter-name mpf-border" mp-role="sightText">{{item.tit}}</span>
@@ -28,16 +28,15 @@
 			    	<h3 class="mp-tagfilter-title mpf-border-bottom js-tagfilter-title">游玩景点
 			    		<span class="mp-tagfilter-subtitle">(可多选)</span>
 					</h3>			    	
-				</scroller>
+				<!-- </scroller> -->
 			</div>
-			<div class="mp-tagfilter-list mp-tagfilter-list-wrap js-mp-tagfilter-list" mp-role="listCon" style="overflow:auto; width: 102%">
+			<div class="mp-tagfilter-list mp-tagfilter-list-wrap js-mp-tagfilter-list" mp-role="listCon" style="overflow:auto; width: 102%; overflow-x: hidden;">
 	    		<ul class="mp-tagfilter-inner js-mp-tagfilter-inner clearfix" mp-role="sighList" style="transition-property: transform;  transform-origin: 0px 0px 0px 0px; display: none; transform: translate(0px, 0px) scale(1) translateZ(0px)" >
 	    			<li v-for="item in listNav" class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
 	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
 	    					{{item.tit}}
 	    				</span>
       				</li>
-      				
 	    		</ul>
 			</div>
 			<div class="mp-tagfilter-expand mpf-border-left">
@@ -53,6 +52,28 @@
 
 		    </ul>
 		</div>
+
+		<!-- footer -->
+		<div mp-role="moreInfoCon" class="mp-moreinfo">
+		    <div mp-role="pageCon">
+		        <div class="mp-pagination">
+		            <a href="javascript:void(0);" mp-role="prevPage" class="mp-disable-btn">
+		                上一页
+		            </a>
+		            <span class="mp-page-num" mp-role="pageNum">
+		                1 / 16
+		            </span>
+		            <a href="/touch/list_北京_一日游_2.html?limitCondition=oneDayTour&amp;region=%E5%8C%97%E4%BA%AC&amp;cityName=%E5%8C%97%E4%BA%AC&amp;keyword=%E4%B8%80%E6%97%A5%E6%B8%B8&amp;cat=from_area%3Dts_type_nav%26from_index%3D3%26from_value%3D%25E4%25B8%2580%25E6%2597%25A5%25E6%25B8%25B8%26dist_city%3D%25E5%258C%2597%25E4%25BA%25AC&amp;pageSize=20"
+		            mp-role="nextPage" class="">
+		                下一页
+		            </a>
+		        </div>
+		        <div class="mp-page-text">
+		            去哪儿门票
+		        </div>
+		    </div>
+		</div>
+		<div mp-role="loadingCon" class="mp-loading-container" style="display: none;"></div>
 	</div>
 </template>
 <script>	
@@ -76,8 +97,7 @@
 		      	    return html += `
 		      	    <li key="${value.id}" class="mp-list-item mpg-flexbox">
 			            <div class="mp-list-imgcon image-ready">
-			                <img class="mp-list-productimg" src="${value.img}"
-	                alt="${value.alt}">
+			                <img class="mp-list-productimg" src="${value.img}" alt="${value.alt}">
 			                <span class="mp-list-bookingflag">
 			                    <span class="mp-list-bookingtext">
 			                        可订明日
@@ -117,11 +137,11 @@
 		                    </span>
 		                </div>
 		            </div>
-		           <!--  <a href="javascript:;"
-		            mp-role="analytics" class="mp-list-link" title="【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游">
-		                【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游
-		            </a> -->
-    			</li>`;
+			           <!--  <a href="javascript:;"
+			            mp-role="analytics" class="mp-list-link" title="【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游">
+			                【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游
+			            </a> -->
+    				</li>`;
 		        })
 		        document.getElementById("ticket-list").innerHTML = html;
 			},
@@ -284,7 +304,8 @@
 	    background: #e5e7e8;
 	}
 	.mp-tagfilter-list-Wrap {
-		position:relative;
+		position: relative;
+		/*overflow-x: hidden!important;*/
 	}
 	/*con*/
 	.mp-list {
@@ -430,5 +451,64 @@
 	.mp-tagfilter-list {
 	    max-height: 6rem;
 	    padding: .03rem .12rem;
+	}
+	/*footer*/
+	.mp-moreinfo {
+	    margin: .2rem 0;
+	    color: #00afc7;
+	    line-height: .82rem;
+	    text-align: center;
+	}
+	.mp-pagination {
+	    height: .7rem;
+	    line-height: .7rem;
+	}
+	div {
+	    display: block;
+	}
+	.mp-moreinfo {
+	    margin: .2rem 0;
+	    color: #00afc7;
+	    line-height: .82rem;
+	    text-align: center;
+	}
+	.mp-pagination a.mp-disable-btn {
+	    background: #bdbdbd;
+	    color: #fff;
+	    border: 0;
+	}
+	.mp-pagination a, .mp-pagination a:link, .mp-pagination a:visited, .mp-pagination a:hover, .mp-pagination a:active {
+	    display: inline-block;
+	    width: 1.4rem;
+	    border: .02rem solid #00afc7;
+	    background: #fff;
+	    color: #00afc7;
+	    line-height: .6rem;
+	    border-radius: .06rem;
+	}
+	.mp-pagination .mp-page-num {
+	    color: #212121;
+	    line-height: .6rem;
+	    padding: 0 15px;
+	}
+	.mp-pagination a, .mp-pagination a:link, .mp-pagination a:visited, .mp-pagination a:hover, .mp-pagination a:active {
+	    display: inline-block;
+	    width: 1.4rem;
+	    border: .02rem solid #00afc7;
+	    background: #fff;
+	    color: #00afc7;
+	    line-height: .6rem;
+	    border-radius: .06rem;
+	}
+	.mp-moreinfo .mp-page-text {
+	    padding-top: .2rem;
+	    line-height: .3rem;
+	    font-size: .3rem;
+	}
+	.mp-loading-container {
+	    height: 2rem;
+	    color: #666;
+	    line-height: 2rem;
+	    text-align: center;
 	}
 </style>

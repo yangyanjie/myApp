@@ -17,22 +17,6 @@
 			    </div>
 			</div>
 	    </swiper-slide>
-	    <swiper-slide>
-		   <div class="mp-category-container mpw-swipe" id="category-container" data--swipe="[object Object]">
-			    <div v-for="item in iconSwiperInfoB" :key="item.id"  class="mp-category-item" data-click="ts_type_nav" data-click-from-value="景点门票" data-click-from-index="0" data-click-dist-city="北京">
-			        <router-link :to="item.link">
-			        	<a href="#" title="" mp-role="analytics" data-params="from_area=ts_type_nav&amp;from_index=0&amp;from_value=景点门票&amp;dist_city=北京">
-				            <div class="mp-category-img-container ">
-				                <img :src="item.src" :alt="item.title" style="opacity: 1;">
-				            </div>
-				            <div class="keywords">
-				                {{item.title}}
-				            </div>
-			        	</a>
-			        </router-link>	
-			    </div>
-			</div>
-	    </swiper-slide>
 	    <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
     </div>

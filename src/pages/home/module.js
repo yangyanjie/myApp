@@ -27,6 +27,6 @@ export default {
         }
     },
     getters: {
-
+        
     }
   }

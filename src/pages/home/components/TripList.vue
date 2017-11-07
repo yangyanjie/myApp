@@ -26,7 +26,7 @@
 </template>
 <script>
   export default {
-   props:['tripListInfo']
+    props:['tripListInfo']
   }
 </script>
 <style>
