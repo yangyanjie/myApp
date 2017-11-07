@@ -98,7 +98,7 @@
                 "imgUrl": "http://img1.qunarzz.com/sight/source/1509/28/1bb74b851279e6.jpg_r_640x214_64ebf0ee.jpg"
             }
         ],
-        "iconSwiperA": [
+        "iconSwiper": [
             {
                 "id": 1,
                 "src": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png",
@@ -146,9 +146,7 @@
                 "src": "http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png",
                 "title": "泡温泉",
                 "link": "/tour"
-            }],
-
-        "iconSwiperB":[
+            },        
             {
                 "id": 9,
                 "src": "http://img1.qunarzz.com/piao/fusion/1611/7f/b1ea3c8c7fb6db02.png",
@@ -195,6 +193,59 @@
                 "id": 16,
                 "src": "http://img1.qunarzz.com/piao/fusion/1611/be/a70e61e1f57ee302.png",
                 "title": "全部",
+                "link": "/tour"
+            },{
+                "id": 17,
+                "src": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png",
+                "title": "景点门票",
+                "link": "/tour"
+            },
+            {
+                "id": 18,
+                "src": "http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png",
+                "title": "动植物园",
+                "link": "/tour"
+            },
+            {
+                "id": 19,
+                "src": "http://img1.qunarzz.com/piao/fusion/1611/45/676b67d7078abc02.png",
+                "title": "故宫",
+                "link": "/palace"
+            },
+            {
+                "id": 20,
+                "src": "http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png",
+                "title": "一日游",
+                "link": "/tour"
+            },
+            {
+                "id": 21,
+                "src": "http://img1.qunarzz.com/piao/fusion/1611/59/569d3c096e542502.png",
+                "title": "必游榜单",
+                "link": "/tour"
+            },
+            {
+                "id": 22,
+                "src": "http://img1.qunarzz.com/piao/fusion/1611/6d/ee9eb965690ce402.png",
+                "title": "秋色美",
+                "link": "/tour"
+            },
+            {
+                "id": 23,
+                "src": "http://img1.qunarzz.com/piao/fusion/1611/d0/e09575e66f4aa402.png",
+                "title": "游乐园",
+                "link": "/tour"
+            },
+            {
+                "id": 24,
+                "src": "http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png",
+                "title": "泡温泉",
+                "link": "/tour"
+            },        
+            {
+                "id": 25,
+                "src": "http://img1.qunarzz.com/piao/fusion/1611/7f/b1ea3c8c7fb6db02.png",
+                "title": "城市观光",
                 "link": "/tour"
             }
         ]

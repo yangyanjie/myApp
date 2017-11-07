@@ -5,8 +5,7 @@ export default {
         swiperInfo: [],
         hotListInfo: [],
         tripListInfo: [],
-        iconSwiperInfoA: [],
-        iconSwiperInfoB: []
+        iconSwiperInfo: []
     },
     mutations: {
         [SET_DATA](state,payload) {
@@ -14,8 +13,7 @@ export default {
             state.swiperInfo = payload.swiperInfo;
             state.hotListInfo = payload.hotListInfo;
             state.tripListInfo = payload.tripListInfo;
-            state.iconSwiperInfoA = payload.iconSwiperA;
-            state.iconSwiperInfoB = payload.iconSwiperB;
+            state.iconSwiperInfo = payload.iconSwiper;
         }
     },
     actions: {
@@ -27,6 +25,16 @@ export default {
         }
     },
     getters: {
-        
+        iconSwiper(state) {
+            const result = [];
+            state.iconSwiperInfo.forEach((value, index) => {
+                let page = Math.floor(index / 8);
+                if(!result[page]) {
+                    result[page] = [];
+                }
+                result[page].push(value);
+            })
+            return result;
+        }
     }
   }
