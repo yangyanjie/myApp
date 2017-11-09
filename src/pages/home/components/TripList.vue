@@ -33,9 +33,7 @@
 <script>
   require('../../../utils/iscroll-probe.js');
   export default {
-<<<<<<< HEAD
-    props:['tripListInfo']
-=======
+
     props:['tripListInfo'],
     mounted: function() {
       this.myScroll = new IScroll('#wrapper', { mouseWheel: true });
@@ -43,7 +41,6 @@
     updated:function() {
       this.myScroll.refresh();
     }
->>>>>>> origin/master
   }
 </script>
 <style>
