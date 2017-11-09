@@ -1,5 +1,5 @@
 <template>
-    <div class="mp-modules-outer"> 
+    <div class="mp-modules-outer" :id="id"> 
         <div class="mp-modules-caption mp-img-container">
             <img class="mp-topic-img" alt="一元秒杀 " :src="queueInfo.topicUrl" style="opacity: 1;">
         </div>
@@ -32,7 +32,8 @@
     import {mapState} from 'vuex'
     export default {
         props: [
-            'queueInfo'
+            'queueInfo',
+            'id'
         ]
     }
 </script>
