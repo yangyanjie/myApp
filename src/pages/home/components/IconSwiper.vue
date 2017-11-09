@@ -3,7 +3,7 @@
 	<swiper :options="swiperOption">
 	    <swiper-slide v-for="(item, index) in this.$store.getters.iconSwiper" :key="index">
 	    	<div class="mp-category-container mpw-swipe" >
-			    <div v-for="itemInner in item" :key="itemInner.id" class="mp-category-item" @click="handleClick">
+			    <div v-for="itemInner in item" :key="itemInner.id" class="mp-category-item">
 			        <router-link :to="itemInner.link">
 			            <div class="mp-category-img-container ">
 			                <img :src="itemInner.src" :alt="itemInner.title" style="opacity: 1;">
@@ -32,11 +32,6 @@
 			        observeParents: true,
 		        }
 	      	}
-	    },
-	    methods: {
-	    	handleClick: function() {
-	    		alert(1)
-	    	}
 	    }
 	}
 </script>

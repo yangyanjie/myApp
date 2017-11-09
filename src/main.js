@@ -5,18 +5,16 @@ import store from './vuex/index'
 import FastClick from 'fastclick';
 import Vuex from 'vuex';
 import VueAwesomeSwiper from "vue-awesome-swiper";
-import VueScroller from 'vue-scroller'
-import axios from "axios"
+// import VueScroll from 'vue-iscroll-view'
 
 FastClick.attach(document.body);
 
 Vue.config.productionTip = false;
 Vue.use(VueAwesomeSwiper);
-Vue.use(VueScroller);
+// Vue.use(VueScroller);
 
 //vue
 /* eslint-disable no-new */
-Vue.prototype.$axios = axios;
 
 new Vue({
   el: '#app',

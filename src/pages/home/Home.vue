@@ -20,13 +20,11 @@
 	import { mapState,mapActions } from "vuex"
 
 	export default {
-		
 		computed: mapState({
 			swiperInfo: (state) => {
 				return state.home.swiperInfo;
 			},
 			hotListInfo: (state) => {
-				
 				return state.home.hotListInfo;
 			},
 			tripListInfo: (state) => {
