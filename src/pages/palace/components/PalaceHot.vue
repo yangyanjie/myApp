@@ -1,0 +1,248 @@
+<template>
+	<div class="mp-topic clear">
+		<!-- <div class="mp-caption"> 
+		    <div class="inner"> 
+		        <h2 class="name">等你来</h2> 
+		         <div class="arrow arrow-right"></div> 
+		         <div class="arrow arrow-left"></div> 
+		    </div> 
+		</div> -->
+        <!-- <ul class="mpg-flexbox" v-on:click="handleWaitClick">
+			<router-link to="wait">
+                <li class="mp-wait-selected" >玩转故宫</li>
+			</router-link>
+			<router-link to="hot">
+                <li class="mp-wait-selected">热销套票</li>
+			</router-link>
+			<router-link to="play">
+                <li class="mp-wait-selected">周边必游</li>
+			</router-link>
+        </ul> -->
+		 <div class="mp-wait-cont clearfix">
+            <ul class="mp-detail-more clearfix">
+                <!-- <li class="mp-item-more clearfix palaceWait" v-for="wait in palaceWait" :key="wait.id">
+                    <router-link class="inner" to="detail">
+                        <div class="mp-waite-img">
+                            <img :src="wait.imgUrl"/>
+                            <span class="cover">{{wait.intro}}</span>
+                        </div>
+                        <p class="mp-wait-title">{{wait.title}}</p>
+                        <div class="lure"> 
+                            <span class="mp-btn" data-sale="true">{{wait.btn}}</span> 
+                            <span class="mpg-price sale">{{wait.symbol}}<em class="mpg-price-num">{{wait.price}}</em></span> 
+                        </div>
+                    </router-link>
+                </li> -->
+				<li class="mp-item-more clearfix palaceHot" v-for="hot in palaceHot" :key="hot.id">
+                    <router-link class="inner" to="detail">
+                        111111
+                        <div class="mp-waite-img">
+                            <img :src="hot.imgUrl"/>
+                            <span class="cover">{{hot.intro}}</span>
+                        </div>
+                        <p class="mp-wait-title">{{hot.title}}</p>
+                        <div class="lure"> 
+                            <span class="mp-btn" data-sale="true">{{hot.btn}}</span> 
+                            <span class="mpg-price sale">{{hot.symbol}}<em class="mpg-price-num">{{hot.price}}</em></span> 
+                        </div>
+                    </router-link>
+                </li>
+				<!-- <li class="mp-item-more clearfix palacePlay" v-for="play in palacePlay" :key="play.id">
+                    <router-link class="inner" to="detail">
+                        <div class="mp-waite-img">
+                            <img :src="play.imgUrl"/>
+                            <span class="cover">{{play.intro}}</span>
+                        </div>
+                        <p class="mp-wait-title">{{play.title}}</p>
+                        <div class="lure"> 
+                            <span class="mp-btn" data-sale="true">{{play.btn}}</span> 
+                            <span class="mpg-price sale">{{play.symbol}}<em class="mpg-price-num">{{play.price}}</em></span> 
+                        </div>
+                    </router-link>
+                </li> -->
+            </ul>
+        </div>
+	</div> 
+</template>
+<script>
+	import { mapState } from 'vuex'
+
+	export default { 
+		
+		computed: mapState({
+			palaceWait:(state) => (
+				state.palace.palaceWait
+			),
+			palaceHot:(state) => (
+				 state.palace.palaceHot
+			),
+			palacePlay:(state) => {
+				return   state.palace.palacePlay
+			},
+
+		}),
+		methods:{
+			handleWaitClick:function(e){
+				var aLi = document.getElementsByClassName("mp-wait-selected");
+				for( var i = 0; i<aLi.length; i++ ){
+					if( aLi[i] == e.target ){		
+						if(e.target == 0){
+							palaceWait
+						}
+
+						e.target
+
+						// if(aLi[i] == 0){
+						// 	palaceWait
+						// }
+						console.log(i)
+					} 
+				}
+			}
+		}
+	} 
+
+</script>
+<style scoped>
+	.mp-topic {
+	    background: #fbdea3;
+        min-height: .5rem;
+        padding: 0 .2rem  0 .2rem;
+	}
+	.mp-caption {
+	    position: relative;
+        height: .7rem;
+        margin-top:-.2rem;
+	    background: #e0ae66;
+	}
+	.inner {
+	    position: relative;
+	    width: 33%;
+	    height: .7rem;
+	    margin: 0 auto;
+	    background-color: #f5d17a;
+	}
+	.mp-caption .name {
+	    color: #ec7b28;
+	    font-size: .33rem!important;
+	    font-weight: 600;
+	    text-align: center;
+	    line-height: .7rem;
+	}
+	.mp-caption .arrow {
+	    overflow: hidden;
+	    position: absolute;
+	    top: 0;
+	    width: 0;
+	    height: 0;
+	    border-width: 0 8px 35px;
+	    border-style: solid;
+	    border-color: transparent;
+	}
+	.mp-caption .arrow-right {
+	    right: 1.98rem;
+	    border-right-color: #f5d17a;
+	}
+	.mp-caption .arrow-left {
+	    left: 1.99rem;
+	    border-left-color: #f5d17a;
+    }
+    /* wait for you */
+    .mpg-flexbox {
+        margin-top: 10px;
+        display: flex;
+        width: 100%;
+    }
+    .mp-wait-selected {
+        margin-right: .04rem;
+        font-size: .28rem;
+        width:33%;
+        float:left;
+        line-height: .6rem;
+        text-align: center;
+        background: #e5c584;
+        color: #ffffff;
+    }
+    .mp-wait-cont {
+        min-height:  14.08rem;
+    }
+   .mp-detail-more {
+        min-height: 100px;
+        margin-right: -20px;
+    }
+    .mp-item-more {
+        float: left;
+        width: 45%;
+        margin: 10px 10px 0 0 ;
+    }
+    .mp-item-more .inner {
+        width: 100%;
+        min-height: 2.8rem;
+        display: block;
+        position: relative;
+        margin-right: 10px;
+        padding-bottom: 30px;
+        background: #fff;
+        color: #25a4bb;
+    } 
+    .mp-item-more .mp-waite-img {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 62.069%;
+        background-color: #dcdcdc;
+    }
+    .mp-item-more .mp-waite-img .cover {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 3px 0;
+        background-color: rgba(0,0,0,.5);
+        color: #fff;
+        line-height: 18px;
+    }
+    .mp-item-more .mp-wait-title {
+        overflow: hidden;
+        margin: 8px 5px 10px;
+        height: 28px;
+        color: #333;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .mp-item-more .lure {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        white-space: nowrap;
+    }
+    .mp-item-more .mp-btn {
+        display: inline-block;
+        min-width: 40px;
+        height: 30px;
+        background-color: #ff433e;
+        color: #fff;
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;  
+        float: right;
+        background-color: #ff4444;
+        color: #ffffff;
+    }
+    .mp-item-more .sale {
+        margin-left: 5px;
+        line-height: 30px;
+        font-size: 18px;
+        color: #f44;
+    }
+	.palaceHot{
+		display: none;
+	}
+	.palacePlay{
+		display: none;
+	}
+</style>
+

@@ -28,7 +28,6 @@
 			    			</div>
 			    		</router-link>
 		    		</li>
-
 		    	</ul>
 		    </div>
 		</div> 
@@ -57,8 +56,8 @@
 	}
 	.mp-caption {
 	    position: relative;
-	    height: 35px;
-	    margin:10px;
+	    height: .7rem;
+	    margin: .2rem .2rem  .2rem .2rem;
 	    background-color: #e0ae66;
 	}
 	.inner {
@@ -97,7 +96,7 @@
 	    width: 100%;
 	}
 	.mp-list {
-		min-height: 11.16rem;
+		min-height: 11rem;
 	}
 	.mp-item{
 		height:2rem;
