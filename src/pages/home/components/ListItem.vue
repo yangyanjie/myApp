@@ -17,16 +17,18 @@
 					<i class="mp-activity-spr">5折泡温泉</i>
 				</div>
 				<div class="mp-activity-imag">
-					<img class="mp-activity-pic" src="../../images/a.jpg" alt="" />
+					<img class="mp-activity-pic" src="../images/a.jpg" alt="" />
 				</div>
 			</li>
 			<li class="mp-activity-item mp-activity-big">
-				<div class="mp-activity-introduce">
-					<p class="mp-activity-change">金秋大促</p>
-					<i class="mp-activity-spr">门票1元起</i>
-				</div>
+				<router-link to="/activity">
+					<div class="mp-activity-introduce">
+						<p class="mp-activity-change">金秋大促</p>
+						<i class="mp-activity-spr">门票1元起</i>
+					</div>
+				</router-link>
 				<div class="mp-activity-imag">
-					<img class="mp-activity-pic" src="../../images/2.png" alt="" />
+					<img class="mp-activity-pic" src="../images/2.png" alt="" />
 				</div>
 			</li>
 		</ul>
@@ -40,11 +42,12 @@
 <style scoped>
 	.mp-listitem-box{
 		overflow: hidden;
+		background: #f5f5f5;
 	}
 	.mp-listitem-con {
 		width:100%;
 		background:#fff;
-		border-top:1px solid #ccc;
+		border-top:1px solid #f5f5f5;
 	}
 	.mp-listentrance-item{
 	    width: 50%;
@@ -58,7 +61,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		box-sizing:border-box;
-		border-right:1px solid #ccc;
+		border-right:1px solid #f5f5f5;
 	}
 	.listentrance-second{
 		border-right:0;
@@ -80,7 +83,7 @@
 	    color: #212121;
 	    font-size: .28rem;
 	    box-sizing:border-box;
-		border-right:1px solid #ccc;
+		border-right:1px solid #f5f5f5;
 	}
 	.mp-activity-big{
 		border-right:0;
@@ -106,6 +109,7 @@
 		white-space:nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		font-size: .2rem;
 		color:#ccc;
 	}
 	.mp-activity-imag{

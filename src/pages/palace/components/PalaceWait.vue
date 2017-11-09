@@ -7,21 +7,15 @@
 		         <div class="arrow arrow-left"></div> 
 		    </div> 
 		</div>
-        <ul class="mpg-flexbox">
-		
-                <li class="mp-wait-selected" ref="waitSelcet">玩转故宫</li>
-			
-			
+        <ul class="mpg-flexbox" v-on:click="handleClick">
                 <li class="mp-wait-selected" ref="waitHot">热销套票</li>
-			
-			
                 <li class="mp-wait-selected" ref="waitPlay">周边必游</li>
-			
+                <li class="mp-wait-selected" ref="waitSelcet">玩转故宫</li>
         </ul>
 		 <div class="mp-wait-cont clearfix">
             <ul class="mp-detail-more clearfix">
                 <li class="mp-item-more clearfix palaceWait" v-for="wait in palaceWait" :key="wait.id">
-                    <router-link class="inner" to="detail">
+                    <router-link class="inner" to="palacedetail">
                         <div class="mp-waite-img">
                             <img :src="wait.imgUrl"/>
                             <span class="cover">{{wait.intro}}</span>
@@ -31,7 +25,7 @@
                             <span class="mp-btn" data-sale="true">{{wait.btn}}</span> 
                             <span class="mpg-price sale">{{wait.symbol}}<em class="mpg-price-num">{{wait.price}}</em></span> 
                         </div>
-                    </router-link>
+                     </router-link>
                 </li>
             </ul>
         </div>
@@ -120,39 +114,32 @@
 			}]
 			}
 		},	
-		mounted: function() {
+		mounted: function(e) {
 			var that = this;
 			this.palaceWait = this.palaceWait1111;
-			this.$refs.waitSelcet.onclick = function(){
-				that.palaceWait = that.$store.state.palace.palaceWait
+			this.$refs.waitSelcet.onclick = function(e){
+				that.palaceWait = that.$store.state.palace.palaceWait;
 			}
 			this.$refs.waitHot.onclick = function(){
-				that.palaceWait = that.$store.state.palace.palaceHot
+				that.palaceWait = that.$store.state.palace.palaceHot;
 			}
 			this.$refs.waitPlay.onclick = function(){
-				that.palaceWait = that.$store.state.palace.palacePlay
+				that.palaceWait = that.$store.state.palace.palacePlay;
 			}
-
 		},
-		
-		
-		// computed: mapState({
-		// 	palaceWait:(state) => {
-		// 		console.log(state.palace.palaceWait);
-		// 		return state.palace.palaceWait
+		methods:{
 			
-		// 	},
-			
-		// 	palaceHot:(state) => (
-		// 		 state.palace.palaceHot
-		// 	),
-			
-		// 	palacePlay:(state) => {
-		// 		return  state.palace.palacePlay
-		// 	}
-
-		// })
-
+			handleClick(e){
+				var aLi = document.getElementsByClassName("mp-wait-selected")
+				for (var i = 0; i < aLi.length; i++){
+					if(aLi[i] == e.target){
+						aLi[i].style.background =" #ec7b28"
+					}else{
+						 aLi[i].style.backgroundColor = "#e5c584"
+					}
+				}
+			}
+		}
 	} 
 
 </script>
@@ -290,7 +277,7 @@
         font-size: .28rem;
         line-height: .6rem;
         text-align: center;  
-        float: right;
+        /* float: right; */
         background-color: #ff4444;
         color: #ffffff;
     }

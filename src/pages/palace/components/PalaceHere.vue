@@ -11,32 +11,67 @@
 			         <div class="arrow arrow-left"></div> 
 		        </div> 
 		    </div>
-		    <div class="mpg-flexbox">
-		    	<ul class="mp-list">
-		    		<li class="mp-item clearfix" v-for="palace in palaceData" :key="palace.id">
-			    		<router-link to="detail">
-			    			<div class="mp-item-img">
-			    					<img class="mp-item-show" :src="palace.imgUrl" alt="" title="故宫" />
-			    			</div>
-			    			<div class="mp-item-introduce">
-			    				<h2 class="mp-item-title">{{palace.title}}</h2>
-			    				<p class="mp-item-details">{{palace.intro}}</p>
-			    				<div class="mp-item-price">
-			    					<span class="mp-item-money">{{palace.price}}</span>
-			    					<span class="mp-item-buy">{{palace.btn}}</span>
-			    				</div>
-			    			</div>
-			    		</router-link>
-		    		</li>
-		    	</ul>
+		    <div class="mpg-flexbox" id="wrapper">
+				<div id="scroller">
+					<ul class="mp-list">
+						<li class="mp-item clearfix" v-for="palace in palaceData" :key="palace.id" v-if="flag">
+							<!-- <router-link to="/palacedetail"> -->
+								<div class="mp-item-img">
+										<img class="mp-item-show" :src="palace.imgUrl" alt="" title="故宫" />
+								</div>
+								<div class="mp-item-introduce">
+									<h2 class="mp-item-title">{{palace.title}}</h2>
+									<p class="mp-item-details">{{palace.intro}}</p>
+									<div class="mp-item-price">
+										<span class="mp-item-money">{{palace.price}}</span>
+										<span class="mp-item-buy">{{palace.btn}}</span>
+									</div>
+								</div>
+							<!-- </router-link> -->
+						</li>
+						<div>
+									{{a}}
+								</div>
+					</ul>
+				</div>
 		    </div>
 		</div> 
 	</div>
 </template>
 <script>
-	
+	require('../../../utils/iscroll-probe.js') 
+
 	export default {
+
+		data(){
+			return {
+				 flag: true,
+				 a: []
+			}
+		},
 		props:['palaceData'],
+
+		mounted(){
+			this.createIScroll();
+		},
+		methods:{
+			createIScroll(){
+				this.myScroll = new IScroll('#wrapper', { probeType: 3,  mouseWheel: true })
+				// this.myScroll.on('scroll', this.handleScroll.bind(this));
+			}
+			// handleScroll(){
+			// 	console.log(this.myScroll.y)
+			// 	if(this.myScroll.y <=  -150){
+			// 		// console.log("加载")
+			// 		console.log(this.$store.state.palace.palaceData)
+			// 			this.a = this.$store.state.palace.palaceData
+			// 	}
+
+			// }
+		},
+		updated:function(){
+			this.myScroll.refresh()
+		}
 	}
 
 </script>
@@ -95,8 +130,13 @@
 	.mpg-flexbox {
 	    width: 100%;
 	}
+	#wrapper{
+		height: 4.5rem;
+		overflow: hidden;
+	}
 	.mp-list {
-		min-height: 11rem;
+		height: 8rem;
+		overflow: hidden;
 	}
 	.mp-item{
 		height:2rem;

@@ -1,5 +1,21 @@
 <template>
 	<div>
+		<div class="palace-box" v-show="flag">
+			<div id="jq-download" style="-webkit-backdrop-filter: blur(10px);position:fixed;top:0;left:0;z-index:5;height:60px;width:100%;background-color:rgba(0, 0, 0, 0.6);font-size:12px;padding:10px 0;box-sizing: border-box">
+			<div style="width:60px;text-align:center;position:absolute;">
+				<img style="width:40px;height:40px" src="//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/top-logo.png"></div>
+			<div style="position:absolute;left:60px">
+				<div style="font-size:22px;color: #25A4BB;font-weight:bold;line-height:22px">去哪儿旅行</div>
+				<div style="color: #c4c4c4;line-height:20px">超过
+				<span style="font-size:14px;color:#fab400;font-weight:bold">4.6亿</span>人的聪明选择</div></div>
+			<div style="padding:5px 10px 0 0;font-size:0;position:relative">
+				<div id="jq-content" style="border-bottom:3px solid #e58700;border-radius:5px;background-color:#e58700;top:2px;right:45px;position:absolute">
+				<div style="width:80px;height:33px;background-color:#f4b000;font-size:14px;text-align:center;border-radius:5px;color:#fff;line-height:33px;font-weight:bold" id="downloadHTML">下载客户端</div></div>
+			</div>
+			<div id="closeDiv" style="position:absolute;top:5px;right:5px;width:20px;height:20px" v-on:click="handleClick" >
+				<img style="width:100%;height:100%" src="//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/modifydelete.png"></div>
+			</div>
+		</div>
 	  	<div class="mp-header">
 			<a class="mp-header-back" href="javascript:window.history.back();" id="msgoback">
 				<span class="iconfont icon-return"></span>
@@ -14,7 +30,16 @@
 </template>
 <script>
 	
-	export default { }
+	export default {
+		data() {
+			 return {flag : true};
+		},
+		methods:{
+			handleClick(){
+				return this.flag = !this.flag
+			}
+		}
+	 }
 
 </script>
 <style scoped>
@@ -26,6 +51,11 @@
 	    border-bottom: #1b7a8b .02rem solid;
 	    height: .88rem;
 	    line-height: .88rem;
+	}
+	.palace-box{
+		width:100%;
+		height:60px;
+		background:#000;
 	}
 	.mp-header-back{
 		position: absolute;

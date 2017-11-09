@@ -1,41 +1,9 @@
 <template>
 	<div class="mp-topic clear">
-		<!-- <div class="mp-caption"> 
-		    <div class="inner"> 
-		        <h2 class="name">等你来</h2> 
-		         <div class="arrow arrow-right"></div> 
-		         <div class="arrow arrow-left"></div> 
-		    </div> 
-		</div> -->
-        <!-- <ul class="mpg-flexbox" v-on:click="handleWaitClick">
-			<router-link to="wait">
-                <li class="mp-wait-selected" >玩转故宫</li>
-			</router-link>
-			<router-link to="hot">
-                <li class="mp-wait-selected">热销套票</li>
-			</router-link>
-			<router-link to="play">
-                <li class="mp-wait-selected">周边必游</li>
-			</router-link>
-        </ul> -->
 		 <div class="mp-wait-cont clearfix">
             <ul class="mp-detail-more clearfix">
-                <!-- <li class="mp-item-more clearfix palaceWait" v-for="wait in palaceWait" :key="wait.id">
-                    <router-link class="inner" to="detail">
-                        <div class="mp-waite-img">
-                            <img :src="wait.imgUrl"/>
-                            <span class="cover">{{wait.intro}}</span>
-                        </div>
-                        <p class="mp-wait-title">{{wait.title}}</p>
-                        <div class="lure"> 
-                            <span class="mp-btn" data-sale="true">{{wait.btn}}</span> 
-                            <span class="mpg-price sale">{{wait.symbol}}<em class="mpg-price-num">{{wait.price}}</em></span> 
-                        </div>
-                    </router-link>
-                </li> -->
 				<li class="mp-item-more clearfix palaceHot" v-for="hot in palaceHot" :key="hot.id">
-                    <router-link class="inner" to="detail">
-                        111111
+                    <!-- <router-link class="inner" to="palacedetail"> -->
                         <div class="mp-waite-img">
                             <img :src="hot.imgUrl"/>
                             <span class="cover">{{hot.intro}}</span>
@@ -45,21 +13,8 @@
                             <span class="mp-btn" data-sale="true">{{hot.btn}}</span> 
                             <span class="mpg-price sale">{{hot.symbol}}<em class="mpg-price-num">{{hot.price}}</em></span> 
                         </div>
-                    </router-link>
+                    <!-- </router-link> -->
                 </li>
-				<!-- <li class="mp-item-more clearfix palacePlay" v-for="play in palacePlay" :key="play.id">
-                    <router-link class="inner" to="detail">
-                        <div class="mp-waite-img">
-                            <img :src="play.imgUrl"/>
-                            <span class="cover">{{play.intro}}</span>
-                        </div>
-                        <p class="mp-wait-title">{{play.title}}</p>
-                        <div class="lure"> 
-                            <span class="mp-btn" data-sale="true">{{play.btn}}</span> 
-                            <span class="mpg-price sale">{{play.symbol}}<em class="mpg-price-num">{{play.price}}</em></span> 
-                        </div>
-                    </router-link>
-                </li> -->
             </ul>
         </div>
 	</div> 
@@ -81,25 +36,6 @@
 			},
 
 		}),
-		methods:{
-			handleWaitClick:function(e){
-				var aLi = document.getElementsByClassName("mp-wait-selected");
-				for( var i = 0; i<aLi.length; i++ ){
-					if( aLi[i] == e.target ){		
-						if(e.target == 0){
-							palaceWait
-						}
-
-						e.target
-
-						// if(aLi[i] == 0){
-						// 	palaceWait
-						// }
-						console.log(i)
-					} 
-				}
-			}
-		}
 	} 
 
 </script>
