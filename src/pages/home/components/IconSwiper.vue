@@ -114,10 +114,6 @@
 	    padding-top: .3rem;
 	    text-align: center;
 	}
-	a {
-	    color: #00afc7;
-	    text-decoration: none;
-	}
 	.iconfont-img {
 		font-size:0.6rem;
 		color:orange!important;
