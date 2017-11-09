@@ -3,7 +3,7 @@
         <router-link class="mp-header-back" to="/" id="msgoback">
             <span class="mp-iconfont-head iconfont icon-return"></span>
         </router-link>
-        <h1 class="activity-header-title">金秋大促</h1>
+        <h1 class="activity-header-title">冬日一元起</h1>
         <router-link class="mp-header-bar mp-header-logo" to="/">
             <span class="iconfont icon-jingdian"></span>
             <br/>首页

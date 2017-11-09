@@ -40,7 +40,7 @@
 
 <script>
 	 export default {
-		props:['hotListInfo']
+        props:['hotListInfo']
 	 }
 </script>
 

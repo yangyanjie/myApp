@@ -6,9 +6,11 @@
 		<index-listItem />
 		<index-hotSeight :hotListInfo="hotListInfo"/>
 		<index-triplist :tripListInfo="tripListInfo"/>
+
 	</div>
 </template>
 <script>
+
 	import header from "./components/Header"
 	import swiper from "./components/Swiper"
 	import triplist from "./components/TripList"
@@ -41,7 +43,7 @@
 		  	"index-iconSwiper":iconSwiper,
 			"index-triplist":triplist,
 		  	"index-listItem":listItem,
-		  	"index-hotSeight": hotSeight
+			  "index-hotSeight": hotSeight,
 		},
 
 		mounted() {
