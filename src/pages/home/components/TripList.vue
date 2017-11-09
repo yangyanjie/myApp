@@ -42,7 +42,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   #weekend-trip {
     width: 100%;
     height: auto;

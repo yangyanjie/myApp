@@ -1,42 +1,39 @@
 <template>
 	<div class="mp-category-container mpw-swipe" id="category-container" >
-		<swiper :options="swiperOption">
-			<swiper-slide v-for="(item, index) in swiperInfo" :key="index" >
-				<div class="mp-category-container mpw-swipe" id="category-container">
-					<div v-for="innerItem in item" :key="innerItem.id"  class="mp-category-item">
-						<router-link :to="innerItem.link">
-							<div class="mp-category-img-container ">
-								<img :src="innerItem.src" :alt="innerItem.title" style="opacity: 1;">
-							</div>
-							<div class="keywords">
-								{{innerItem.title}}
-							</div>
-						</router-link>	
-					</div>
-				</div>
-			</swiper-slide>
-			<div class="swiper-pagination"  slot="pagination"></div>
-		</swiper>
+	<swiper :options="swiperOption">
+	    <swiper-slide v-for="(item, index) in this.$store.getters.iconSwiper" :key="index">
+	    	<div class="mp-category-container mpw-swipe" >
+			    <div v-for="itemInner in item" :key="itemInner.id" class="mp-category-item">
+			        <router-link :to="itemInner.link">
+			            <div class="mp-category-img-container ">
+			                <img :src="itemInner.src" :alt="itemInner.title" style="opacity: 1;">
+			            </div>
+			            <div class="keywords">
+			                {{itemInner.title}}
+			            </div>
+			        </router-link>	
+			    </div>
+			</div>
+	    </swiper-slide>
+		
+	    <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
     </div>
 </template>
 <script>
-	import {mapGetters} from 'vuex'
 
-  	export default {
-		props: ["iconSwiperInfo"],
-		data() {
-			return {
-				swiperOption: {
-				direction: 'horizontal',
-				autoHeight: true,
-				pagination: '.swiper-pagination',
-				observeParents: true,
-				}
-			}
-		},
-		computed: mapGetters(['swiperInfo']),
-    
-  	}
+	export default {
+	    data() {
+	      	return {
+		        swiperOption: {
+			        direction: 'horizontal',
+			        autoHeight: true,
+			        pagination: '.swiper-pagination',
+			        observeParents: true,
+		        }
+	      	}
+	    }
+	}
 </script>
 <style>
 	.mp-category-container {
@@ -116,10 +113,6 @@
 	    height: 1.3rem;
 	    padding-top: .3rem;
 	    text-align: center;
-	}
-	a {
-	    color: #00afc7;
-	    text-decoration: none;
 	}
 	.iconfont-img {
 		font-size:0.6rem;

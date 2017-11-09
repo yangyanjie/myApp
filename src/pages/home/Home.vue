@@ -2,7 +2,7 @@
 	<div class="hello">
 	  	<index-header />
 	  	<index-swiper :swiperInfo="swiperInfo" />
-		<index-iconSwiper/>
+		<index-iconSwiper :iconSwiperInfo="iconSwiperInfo" />
 		<index-listItem />
 		<index-hotSeight :hotListInfo="hotListInfo"/>
 		<index-triplist :tripListInfo="tripListInfo"/>
@@ -22,7 +22,6 @@
 	import { mapState,mapActions } from "vuex"
 
 	export default {
-		
 		computed: mapState({
 			swiperInfo: (state) => {
 				return state.home.swiperInfo;

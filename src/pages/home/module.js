@@ -24,6 +24,17 @@ export default {
         }
     },
     getters: {
+        iconSwiper(state) {
+            const result = [];
+            state.iconSwiperInfo.forEach((value, index) => {
+                let page = Math.floor(index / 8);
+                if(!result[page]) {
+                    result[page] = [];
+                }
+                result[page].push(value);
+            })
+            return result;
+        },
         swiperInfo(state) {
 			const result = [];
 			state.iconSwiperInfo.forEach((value,index) => {
