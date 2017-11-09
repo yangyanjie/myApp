@@ -8,32 +8,31 @@
                 </ul> 
         </div>
         <div class="mp-banner mp-img-container"> 
-                <img class="mp-topic-img" alt="金秋大促 " src="//s.qunarzz.com/piao_topic/image/touch/custom/2017/2390nationalday09/banner_bg.png" style="opacity:1"> 
-                <div class="mp-banner-animate">
-                    <img class="mp-topic-img" alt="水稻" src="//s.qunarzz.com/piao_topic/image/touch/custom/2017/2390nationalday09/banner_animate.png" style="opacity:1">
-                </div> 
-                <div class="mp-banner-cover">
-                    <img class="mp-topic-img" alt="金秋" src="//s.qunarzz.com/piao_topic/image/touch/custom/2017/2390nationalday09/banner_cover.png" style="opacity:1">
-                </div> 
-                <div class="mp-banner-girl">
-                    <img class="mp-topic-img" alt="女孩" src="//s.qunarzz.com/piao_topic/image/touch/custom/2017/2390nationalday09/girl.gif" style="opacity:1">
-                </div> 
+                <img class="mp-topic-img" alt="金秋大促 " src="//s.qunarzz.com/piao_topic/image/touch/custom/2017/2390nationalday09/winter/banner.jpg" style="opacity:1"> 
             </div>
         </div>
        <city-outer />
+       <anchor-outer />
     </div>
      
 </template>
 <script>
     import cityOuter from './CityOuter'
+    import anchorOuter from './AnchorOuter'
     export default {
         components: {
-            'city-outer': cityOuter
+            'city-outer': cityOuter,
+            'anchor-outer': anchorOuter
+
         }
     }
 
 </script>
 <style scoped>
+    .mp-topic {
+        background:#7bdafe;
+
+    }
 	.mp-country-outer {
         height: .96rem;
     }
@@ -41,23 +40,24 @@
         display: flex;
         width: 100%;
     }
-    .mp-country-actived {
-        background-color: #fff661;
-        color: #ef322b;
-    }
     .mp-country-outer .mp-flexbox-layout {
         width:50%;
-        background-color: #ff711a;
+        background-color: #86b0ff;
         color: #fff;
         font-size: .32rem;
         line-height: .96rem;
         text-align: center;
+    }
+    .mp-country-outer .mp-country-actived {
+        background-color: #4482f6;
+        color: #fff;
     }
     .mp-banner {
         position: relative;
         height: 0;
         padding-bottom: 64.8%; 
         background-color: #f3cba1;
+        overflow: hidden;
     }
     .mp-topic-img {
         width: 100%;
@@ -72,10 +72,7 @@
         animation: shake 5s linear infinite;
         transform-origin: 0 100%;
     }
-    .mp-topic img {
-        opacity: 0;
-        transition: all .5s;
-    }
+    
     .mp-banner-cover {
         position: absolute;
         z-index: 2;
@@ -87,7 +84,7 @@
         position: absolute;
         z-index: 3;
         right: -28%;
-        top: 10%;
+        top: 28%;
         width: 100%;
     }
 </style>
