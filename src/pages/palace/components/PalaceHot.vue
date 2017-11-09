@@ -3,7 +3,7 @@
 		 <div class="mp-wait-cont clearfix">
             <ul class="mp-detail-more clearfix">
 				<li class="mp-item-more clearfix palaceHot" v-for="hot in palaceHot" :key="hot.id">
-                    <!-- <router-link class="inner" to="palacedetail"> -->
+                    <router-link class="inner" to="/palacedetail">
                         <div class="mp-waite-img">
                             <img :src="hot.imgUrl"/>
                             <span class="cover">{{hot.intro}}</span>
@@ -13,7 +13,7 @@
                             <span class="mp-btn" data-sale="true">{{hot.btn}}</span> 
                             <span class="mpg-price sale">{{hot.symbol}}<em class="mpg-price-num">{{hot.price}}</em></span> 
                         </div>
-                    <!-- </router-link> -->
+                    </router-link>
                 </li>
             </ul>
         </div>

@@ -15,7 +15,7 @@
 		 <div class="mp-wait-cont clearfix">
             <ul class="mp-detail-more clearfix">
                 <li class="mp-item-more clearfix palaceWait" v-for="wait in palaceWait" :key="wait.id">
-                    <router-link class="inner" to="palacedetail">
+                    <router-link class="inner" to="/palacedetail">
                         <div class="mp-waite-img">
                             <img :src="wait.imgUrl"/>
                             <span class="cover">{{wait.intro}}</span>

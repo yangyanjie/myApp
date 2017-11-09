@@ -15,7 +15,7 @@
 				<div id="scroller">
 					<ul class="mp-list">
 						<li class="mp-item clearfix" v-for="palace in palaceData" :key="palace.id" v-if="flag">
-							<!-- <router-link to="/palacedetail"> -->
+							<router-link to="/palacedetail">
 								<div class="mp-item-img">
 										<img class="mp-item-show" :src="palace.imgUrl" alt="" title="故宫" />
 								</div>
@@ -27,11 +27,8 @@
 										<span class="mp-item-buy">{{palace.btn}}</span>
 									</div>
 								</div>
-							<!-- </router-link> -->
+							</router-link>
 						</li>
-						<div>
-									{{a}}
-								</div>
 					</ul>
 				</div>
 		    </div>
