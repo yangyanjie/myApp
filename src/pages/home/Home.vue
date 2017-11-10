@@ -1,14 +1,16 @@
 <template>
+
 	<div class="hello">
 	  	<index-header />
 	  	<index-swiper :swiperInfo="swiperInfo" />
-		<index-iconSwiper :iconSwiperInfo="iconSwiperInfo" />
+		<index-iconSwiper :iconSwiperA="iconSwiperA" :iconSwiperB="iconSwiperB" />
 		<index-listItem />
 		<index-hotSeight :hotListInfo="hotListInfo"/>
 		<index-triplist :tripListInfo="tripListInfo"/>
-
 	</div>
+
 </template>
+
 <script>
 
 	import header from "./components/Header"
@@ -22,6 +24,23 @@
 	import { mapState,mapActions } from "vuex"
 
 	export default {
+    	data () {
+    	    return {
+    	      msg: 'Welcome to Your Vue.js App',
+    	      "iconSwiperA": [],
+    	      "iconSwiperB": []
+    	    }
+		},
+		
+		components:{
+			"index-header":header,
+			"index-swiper":swiper,
+			"index-iconSwiper":iconSwiper,
+			"index-listItem":listItem,
+			"index-hotSeight":hotSeight,
+			"index-triplist":triplist
+		},
+
 		computed: mapState({
 			swiperInfo: (state) => {
 				return state.home.swiperInfo;
@@ -37,17 +56,9 @@
 			}
 		}),
 
-		components:{
-		  	"index-header":header,
-		  	"index-swiper":swiper,
-		  	"index-iconSwiper":iconSwiper,
-			"index-triplist":triplist,
-		  	"index-listItem":listItem,
-			  "index-hotSeight": hotSeight,
-		},
-
 		mounted() {
 			!this.swiperInfo.length && this.getHomeData();
+		
 		},
 
 		methods: mapActions({
