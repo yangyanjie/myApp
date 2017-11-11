@@ -1,7 +1,7 @@
 <template>
     <div class="mp-anchor-outer"> 
         <div class="mp-anchor-container" style="" ref="anchorList"> 
-            <ul class="mp-anchor-list" ref="mpList"> 
+            <ul class="mp-anchor-list" ref="mpList" @click="handleClick"> 
                 <li class="mp-anchor-item" style="font-weight:900">
                     <span>1元秒杀</span>
                 </li> 
@@ -64,30 +64,49 @@
         }),
         mounted: function() {
             window.onscroll = this.handleScroll;
-            this.top = document.getElementsByClassName("mp-modules-outer");
+            this.top = document.querySelectorAll(".mp-modules-outer");
+            
+            this.topArr = [];
+            this.top.forEach((value) => {
+                this.topArr.push(value.offsetTop);
+            })
         },
         methods:{
             handleScroll:function() {
-                var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
-                if(this.$refs.anchorList.offsetTop < scrolltop) {
+               this.scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
+                if(this.$refs.anchorList.offsetTop < this.scrolltop) {
                     this.$refs.anchorList.style.position = "fixed";
                     this.$refs.anchorList.style.top="0"
                 }else{
                     this.$refs.anchorList.style.position = "";
                     this.$refs.anchorList.style.top=""
                 }
-                for(var i = 0; i< this.top.length; i++) {
-                    if(this.top[i].offsetTop < scrolltop && this.top[i+1].offsetTop) {
-                        for(var j = 0 ; j < 6 ;j++) {
-                            this.$refs.mpList.children[j].style.fontWeight=""
+                
+                this.topArr.map((value, index) => {
+                    if(this.scrolltop > value - 400) {
+                        for(var i=0; i<this.$refs.mpList.children.length; i++) {
+                            this.$refs.mpList.children[i].style.fontWeight = "100"
                         }
-                        
-                       this.$refs.mpList.children[i+1].style.fontWeight="900";
+                        this.$refs.mpList.children[index].style.fontWeight = "900"
+                    }
+                })
+            },
+            handleClick: function(e) {
+                for(var j=0; j<this.$refs.mpList.children.length; j++){
+                            
+                    if(e.target == this.$refs.mpList.children[j].children[0]) {
+
+                        var scrollT = document.body.scrollTop || document.documentElement.scrollTop;
+
+                        document.documentElement.scrollTop = this.topArr[j] - 200;         
+                        for(var i=0; i<this.$refs.mpList.children.length; i++) {
+                            this.$refs.mpList.children[i].style.fontWeight = "100"
+                        }                     
+                        this.$refs.mpList.children[j].style.fontWeight = "900"
                     }
                 }
-                
-
             }
+            
         }
     }
 

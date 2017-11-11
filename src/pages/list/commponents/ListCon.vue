@@ -192,7 +192,6 @@
                     if(delta>0){
                     	oNpm.style.transform = "translate(0, 0.8rem)"
                     }else{
-
                     	oNpm.style.transform = "translate(0, 0)";
                     }
                     beforeScrollTop = afterScrollTop;
@@ -202,6 +201,9 @@
 		},
 		updated: function() {
 			this.myScroll.refresh();
+		},
+		destroyed: function() {
+			window.onscroll = null;
 		}
 	}
 </script>
