@@ -2,13 +2,15 @@
 	<div class="hello">
 	  	<index-header />
 	  	<index-swiper :swiperInfo="swiperInfo" />
-		<index-iconSwiper :iconSwiperInfoA="iconSwiperInfoA" :iconSwiperInfoB="iconSwiperInfoB" />
+		<index-iconSwiper :iconSwiperInfo="iconSwiperInfo" />
 		<index-listItem />
 		<index-hotSeight :hotListInfo="hotListInfo"/>
 		<index-triplist :tripListInfo="tripListInfo"/>
+
 	</div>
 </template>
 <script>
+
 	import header from "./components/Header"
 	import swiper from "./components/Swiper"
 	import triplist from "./components/TripList"
@@ -20,23 +22,18 @@
 	import { mapState,mapActions } from "vuex"
 
 	export default {
-		
 		computed: mapState({
 			swiperInfo: (state) => {
 				return state.home.swiperInfo;
 			},
 			hotListInfo: (state) => {
-				console.log(state.home.hotListInfo);
 				return state.home.hotListInfo;
 			},
 			tripListInfo: (state) => {
 				return state.home.tripListInfo;
 			},
-			iconSwiperInfoA: (state) => {
-				return state.home.iconSwiperInfoA;
-			},
-			iconSwiperInfoB: (state) => {
-				return state.home.iconSwiperInfoB;
+			iconSwiperInfo: (state) => {
+				return state.home.iconSwiperInfo;
 			}
 		}),
 
@@ -46,7 +43,7 @@
 		  	"index-iconSwiper":iconSwiper,
 			"index-triplist":triplist,
 		  	"index-listItem":listItem,
-		  	"index-hotSeight": hotSeight
+			  "index-hotSeight": hotSeight,
 		},
 
 		mounted() {

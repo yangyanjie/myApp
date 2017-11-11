@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/Home'
+import Activity from '@/pages/activity/Activity'
 import Tour from "@/pages/list/OneDayList"
 import Search from "@/pages/search/Search"
+import Details from '@/pages/details/details'
 
 Vue.use(Router)
 
@@ -14,6 +16,12 @@ export default new Router({
       component: Home
     },
     {
+      path: '/activity',
+      name: 'Activity',
+      component: Activity
+    },
+    { 
+    
       path: '/tour',
       name: 'tour',
       component: Tour
@@ -21,6 +29,11 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: Search
+    },
+    {
+      path: '/tour/details/:id?',
+      name: 'details',
+      component: Details
     }
   ]
 })

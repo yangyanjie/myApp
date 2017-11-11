@@ -3,9 +3,9 @@
 		<ul class="mp-listitem-con clearfix">
 			<li class="mp-listentrance-item">
 				<span class="iconfont icon-dingwei1"></span>
-				定位失败
+				<span class="mp-listentrance">定位中</span>
 			</li>
-			<li class="mp-listentrance-item listentrance-second" >
+			<li class="mp-listentrance-item listentrance-second">
 					<span class="iconfont icon-qiu"></span>
 					5折泡温泉
 			</li>
@@ -21,10 +21,12 @@
 				</div>
 			</li>
 			<li class="mp-activity-item mp-activity-big">
-				<div class="mp-activity-introduce">
-					<p class="mp-activity-change">精选温泉</p>
-					<i class="mp-activity-spr">5折泡温泉</i>
-				</div>
+				<router-link to="/activity">
+					<div class="mp-activity-introduce">
+						<p class="mp-activity-change">金秋大促</p>
+						<i class="mp-activity-spr">门票1元起</i>
+					</div>
+				</router-link>
 				<div class="mp-activity-imag">
 					<img class="mp-activity-pic" src="../images/2.png" alt="" />
 				</div>
@@ -33,8 +35,38 @@
 	</div>	
 </template>
 <script>
+	var map = new AMap.Map('container',{
+        resizeEnable: true,
+        zoom: 10,
+        center: [116.480983, 40.0958]
+    });
+    mapObj = new AMap.Map('iCenter');
+	mapObj.plugin('AMap.Geolocation', function () {
+	    geolocation = new AMap.Geolocation({
+	        enableHighAccuracy: true,//是否使用高精度定位，默认:true
+	        timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+	        maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+	        convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+	        showButton: true,        //显示定位按钮，默认：true
+	        buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
+	        buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+	        showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
+	        showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
+	        panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
+	        zoomToAccuracy:true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+	    });
+	    mapObj.addControl(geolocation);
+	    geolocation.getCurrentPosition();
+	    AMap.event.addListener(geolocation, 'complete', function(res){
+			var mpListentrance = document.getElementsByClassName("mp-listentrance")[0];
+			mpListentrance.innerHTML = res.addressComponent.province;
+	    });
+	    AMap.event.addListener(geolocation, 'error', function(err){
+	    	var mpListentrance = document.getElementsByClassName("mp-listentrance")[0];
+			mpListentrance.innerHTML = "定位失败";
+	    });      //返回定位出错信息
+	});
 	
-	export default {}
 
 </script>
 <style scoped>
@@ -106,6 +138,7 @@
 		white-space:nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		font-size: .2rem;
 		color:#ccc;
 	}
 	.mp-activity-imag{

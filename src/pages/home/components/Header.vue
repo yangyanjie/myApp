@@ -18,7 +18,9 @@
   		</div>
   	</header>
 </template>
-<script>	
+<script>
+	export default ({
+	})	
 </script>
 <style scoped>
 	.mp-header {

@@ -2,17 +2,23 @@
   <div class="lazy-load" id="weekend-trip">
     <h2 class="mp-modtitle">周末去哪儿</h2>
     <div>
-      <div class="mp-product-item" v-for="item in tripListInfo" :key="item.id">
-        <router-link :to="item.link" class="mp-fulllink">
-          <div class="product-imgcontainer image-ready">
-            <img :src="item.imgUrl" :alt="item.title">
+      <div id="wrapper">
+        <div id="scroller">
+          <div>
+            <div class="mp-product-item" v-for="item in tripListInfo" :key="item.id">
+              <router-link :to="item.link" class="mp-fulllink">
+                <div class="product-imgcontainer image-ready">
+                  <img :src="item.imgUrl" :alt="item.title">
+                </div>
+                <div class="mp-product-info">
+                  <p class="product-name">{{item.title}}</p>
+                  <p class="product-desc">{{item.desc}}</p>
+                </div>
+              </router-link>
+            </div>
           </div>
-          <div class="mp-product-info">
-            <p class="product-name">{{item.title}}</p>
-            <p class="product-desc">{{item.desc}}</p>
-          </div>
-        </router-link>
-      </div>
+        </div>
+    </div>
       
       <div class="mp-price-desc">
         <span class="iconfont icon-xiaotanhao"></span>
@@ -25,8 +31,16 @@
   </div>
 </template>
 <script>
+  require('../../../utils/iscroll-probe.js');
   export default {
-   props:['tripListInfo']
+
+    props:['tripListInfo'],
+    mounted: function() {
+      this.myScroll = new IScroll('#wrapper', { mouseWheel: true });
+    },
+    updated:function() {
+      this.myScroll.refresh();
+    }
   }
 </script>
 <style>
@@ -102,7 +116,16 @@
   .mp-price-desc-highlight {
     font-weight: 900;
   }
-  
+  #wrapper {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    background: #ccc;
+    overflow: hidden;
+  }
 
 </style>
 

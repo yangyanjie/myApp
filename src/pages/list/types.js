@@ -1,0 +1,2 @@
+export const LIST_GETDATA = "LIST_GETDATACON";
+export const LIST_SETDATA = "LIST_SETDATA";

@@ -1,64 +1,39 @@
 <template>
 	<div class="mp-category-container mpw-swipe" id="category-container" >
 	<swiper :options="swiperOption">
-	    <swiper-slide >
-	    	<div class="mp-category-container mpw-swipe" id="category-container" data--swipe="[object Object]">
-			    <div v-for="item in iconSwiperInfoA" :key="item.id"  class="mp-category-item" data-click="ts_type_nav" data-click-from-value="景点门票" data-click-from-index="0" data-click-dist-city="北京" @click="handleClick">
-			        <router-link :to="item.link">
-			        	<a href="#" title="" mp-role="analytics" data-params="from_area=ts_type_nav&amp;from_index=0&amp;from_value=景点门票&amp;dist_city=北京">
-				            <div class="mp-category-img-container ">
-				                <img :src="item.src" :alt="item.title" style="opacity: 1;">
-				            </div>
-				            <div class="keywords">
-				                {{item.title}}
-				            </div>
-			        	</a>
+	    <swiper-slide v-for="(item, index) in this.$store.getters.iconSwiper" :key="index">
+	    	<div class="mp-category-container mpw-swipe" >
+			    <div v-for="itemInner in item" :key="itemInner.id" class="mp-category-item">
+			        <router-link :to="itemInner.link">
+			            <div class="mp-category-img-container ">
+			                <img :src="itemInner.src" :alt="itemInner.title" style="opacity: 1;">
+			            </div>
+			            <div class="keywords">
+			                {{itemInner.title}}
+			            </div>
 			        </router-link>	
 			    </div>
 			</div>
 	    </swiper-slide>
-	    <swiper-slide>
-		   <div class="mp-category-container mpw-swipe" id="category-container" data--swipe="[object Object]">
-			    <div v-for="item in iconSwiperInfoB" :key="item.id"  class="mp-category-item" data-click="ts_type_nav" data-click-from-value="景点门票" data-click-from-index="0" data-click-dist-city="北京">
-			        <router-link :to="item.link">
-			        	<a href="#" title="" mp-role="analytics" data-params="from_area=ts_type_nav&amp;from_index=0&amp;from_value=景点门票&amp;dist_city=北京">
-				            <div class="mp-category-img-container ">
-				                <img :src="item.src" :alt="item.title" style="opacity: 1;">
-				            </div>
-				            <div class="keywords">
-				                {{item.title}}
-				            </div>
-			        	</a>
-			        </router-link>	
-			    </div>
-			</div>
-	    </swiper-slide>
+		
 	    <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
     </div>
 </template>
 <script>
-	
 
-  export default {
-  	props: ["iconSwiperInfoA", "iconSwiperInfoB"],
-    data() {
-      return {
-        swiperOption: {
-          direction: 'horizontal',
-          autoHeight: true,
-          pagination: '.swiper-pagination',
-          observeParents: true,
-        }
-      }
-    },
-    methods: {
-    	handleClick: function() {
-    		alert(1)
-    	}
-    }
-    
-  }
+	export default {
+	    data() {
+	      	return {
+		        swiperOption: {
+			        direction: 'horizontal',
+			        autoHeight: true,
+			        pagination: '.swiper-pagination',
+			        observeParents: true,
+		        }
+	      	}
+	    }
+	}
 </script>
 <style>
 	.mp-category-container {
@@ -138,10 +113,6 @@
 	    height: 1.3rem;
 	    padding-top: .3rem;
 	    text-align: center;
-	}
-	a {
-	    color: #00afc7;
-	    text-decoration: none;
 	}
 	.iconfont-img {
 		font-size:0.6rem;

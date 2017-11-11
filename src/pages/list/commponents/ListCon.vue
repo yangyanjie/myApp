@@ -1,157 +1,207 @@
 <template>
-  	<div>
+  	<div style="overflow:hidden;">
   		<div class="mp-header">
-		    <router-link to="/" class="mp-header-left iconfont icon-return" mp-role="left">
+		    <router-link to="/" class="mp-header-left iconfont icon-return" >
 		    </router-link>
-		    <h1 class="mp-header-title" mp-role="title">
-		        <input data-search="keyword" type="text" name="keyword" id="search-input-bind"
-		        autocomplete="off" placeholder="输入城市或景点" class="mp-search-input">
-		        <a data-search="delete" class="mp-search-delete" id="search-form-delete"
+		    <h1 class="mp-header-title">
+		        <input data-search="keyword" type="text" placeholder="输入城市或景点" class="mp-search-input">
+		        <a class="mp-search-delete" 
 		        style="display: none;">
 		        </a>
-		        <input type="hidden" name="from" value="ts_search">
+		        <input type="hidden">
 		    </h1>
-		    <span class="mp-header-right" mp-role="right">
-		        <a data-search="submit" class="mp-search-submit" rel="nofollow" id="search-form-submit">
+		    <span class="mp-header-right" >
+		        <a class="mp-search-submit">
 		            搜索
 		        </a>
 		    </span>
 		</div>
+		
 		<div class="mp-tagfilter-list-Wrap">
-			<div class="mp-tagfilter-list" mp-role="listCon" style="overflow: hidden; height: .8rem;">
-			    <scroller>
-		  			<ul  class="mp-tagfilter-inner clrfix js-tagfilter-inner" mp-role="sightList" style="width: 4913px; transition-property: transform; transform-origin: 0px 0px 0px; transform: translate(0px, 0px) translateZ(0px);">
-			    		<li v-for="item in listNav" key="item.id" class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="" data-click-from-value="八达岭长城">
-			      		<span class="mp-tagfilter-name mpf-border" mp-role="sightText">{{item.tit}}</span>
-			      		</li>
-			    	</ul>
-			    	<h3 class="mp-tagfilter-title mpf-border-bottom js-tagfilter-title">游玩景点
-			    		<span class="mp-tagfilter-subtitle">(可多选)</span>
-					</h3>			    	
-				</scroller>
+			<div class="mp-tagfilter-list mp-tagilter-listInner" >
+			    <div id="wrapper" class="js-mp-targfilter mp-tagfilter-list-inner">
+			    	<div id="scroller" style="width: 42rem;">
+			  			<ul class="mp-tagfilter-inner mp-tagfilter-con clearfix js-tagfilter-inner" >		
+			    			<li v-for="item in listData.nav" key="item.id" class="mp-tagfilter-item mp-tarfilter-itemInline">
+			      				<span class="mp-tagfilter-name mpf-border" >
+			      					{{item.tit}}
+			      				</span>
+			      			</li>
+				    	</ul>
+			    	</div>
+			    </div>
+		    	<h3 class="mp-tagfilter-title mpf-border-bottom js-tagfilter-title">游玩景点
+		    		<span class="mp-tagfilter-subtitle">(可多选)</span>
+				</h3>			    	
 			</div>
-			<div class="mp-tagfilter-list mp-tagfilter-list-wrap js-mp-tagfilter-list" mp-role="listCon" style="overflow:auto; width: 102%">
-	    		<ul class="mp-tagfilter-inner js-mp-tagfilter-inner clearfix" mp-role="sighList" style="transition-property: transform;  transform-origin: 0px 0px 0px 0px; display: none; transform: translate(0px, 0px) scale(1) translateZ(0px)" >
-	    			<li v-for="item in listNav" class="mp-tagfilter-item" mp-role="sightItem" data-click="tl_top_suggest" data-click-dist-city="北京" data-click-from-value="八达岭长城">
-	    				<span class="mp-tagfilter-name mpf-border" mp-role="sightText">
-	    					{{item.tit}}
-	    				</span>
+			<div class="mp-tagfilter-list mp-tagfilter-list-wrap js-mp-tagfilter-list" >
+	    		<ul class="mp-tagfilter-inner mp-tagfilter-inner-first js-mp-tagfilter-inner clearfix" >
+	    			<li v-for="item in listData.nav" class="mp-tagfilter-item">
+		    			<span class="mp-tagfilter-name mpf-border">
+		    					{{item.tit}}
+		    			</span>
       				</li>
-      				
 	    		</ul>
 			</div>
 			<div class="mp-tagfilter-expand mpf-border-left">
-	    		<span @click="handleClick" class="mpg-iconfont iconfont icon-zhiwuyuan" mp-role="moreSight" data-click="tl_top_suggest_arrow">
+	    		<span @click="handleClick" class="mpg-iconfont iconfont icon-zhiwuyuan" >
 			    </span>
 			</div>
 	  	</div>
-
 	  	<!-- con -->
-
 	  	<div mp-role="ticketCon">
-		    <ul class="mp-list" id="ticket-list">
-
-		    </ul>
+			<ul class="mp-list" id="ticket-list">
+			    	<router-link to="/tour/details/1" class="ticket-list-inner">
+			    		<li v-for="item in listData.list" :key="item.id" class="mp-list-item mpg-flexbox">
+				             <div class="mp-list-imgcon image-ready">
+				                 <img class="mp-list-productimg" :src="item.img" :alt="item.tit">
+				                 <span class="mp-list-bookingflag">
+				                    <span class="mp-list-bookingtext">
+				                        {{item.tit}}
+				                    </span>
+				                 </span>
+				             </div>
+				             <div class="mp-list-productinfo mpg-flexbox-item mpf-border-bottom">
+				                 <h4 class="mp-list-productname mpg-ellipsis2">
+				                     {{item.alt}}
+				                 </h4>
+			                <div class="mp-list-taglist" >
+			                    <span class="mp-list-tagitemlight mpf-border-right">
+		                         	{{item.local}}
+			                    </span>
+			                    <span class="mp-list-tagitem mpf-border-right">
+		                         	{{item.price}}
+			                    </span>
+			                    <span class="mp-list-tagitem mpf-border-right">
+		                         	{{item.shop}}
+			                    </span>
+			                </div>
+		               
+			                <div class="mp-list-priceinfo">
+			                    <span class="mp-list-qunarprice">
+			                         ¥
+			                        <em>
+			                            {{item.unitPrice}}
+			                        </em>
+			                    </span>
+			                    <span class="mp-list-priceflag">
+			                         起
+			                    </span>
+			                </div>
+			                <div class="mp-list-moreinfo">
+			                    <span class="mp-list-text mpf-border-left">
+		                         	{{item.sold}}
+			                    </span>
+			                </div>
+			             	</div>
+	     				</li>
+			    	</router-link>
+			</ul>
 		</div>
+		<!-- footer -->
+		<div class="mp-moreinfo">
+		    <div>
+		        <div class="mp-pagination">
+		            <a href="javascript:void(0);" class="mp-disable-btn">
+		                上一页
+		            </a>
+		            <span class="mp-page-num" >
+		                1 / 16
+		            </span>
+		            <a href="javascript:;" >
+		                下一页
+		            </a>
+		        </div>
+		        <div class="mp-page-text">
+		            去哪儿门票
+		        </div>
+		    </div>
+		</div>
+		<div class="mp-loading-container" >
+		</div>
+		<!-- footerNav -->
+		<div class="mpw-dock mpw-dock-fadein js-mpw-fadein">
+			<div class="mp-typefilter-outer">
+			<ul class="mp-typefilter mpg-flexbox" >
+			    <li class="mp-typefilter-item mpg-flexbox-layout" >
+			        <div class="mp-typefilter-icon iconfont icon-leimupinleifenleileibie--">
+			        </div>
+			        <div class="mp-typefilter-name">
+			            全部分类
+			        </div>
+			    </li>
+			    <li class="mp-typefilter-item mpg-flexbox-layout" >
+			        <div class="mp-typefilter-icon iconfont icon-shaixuan2">
+			        </div>
+			        <div class="mp-typefilter-name">
+			            筛选
+			        </div>
+			    </li>
+			    <li class="mp-typefilter-item mpg-flexbox-layout">
+			        <div class="mp-typefilter-icon iconfont icon-paixu1">
+			        </div>
+			        <div class="mp-typefilter-name">
+			            推荐排序
+			        </div>
+			    </li>
+			</ul>
+			</div>
+		</div>
+		
 	</div>
 </template>
+
 <script>	
 
-	export default {
-		name:"listcon",
-		components: {},
-		data: function() {
-			return {
-				listData:[],
-				listNav: []
-			}
-		},
-		methods: {
-			handleListDataSucc: function(res) {
-		        let listData = res.data.data.list;
-		        this.listNav = res.data.data.listTit;
+	require("../../../utils/iscroll-probe.js")
 
-		        var html = "";
-		        listData.map((value) => {
-		      	    return html += `
-		      	    <li key="${value.id}" class="mp-list-item mpg-flexbox">
-			            <div class="mp-list-imgcon image-ready">
-			                <img class="mp-list-productimg" src="${value.img}"
-	                alt="${value.alt}">
-			                <span class="mp-list-bookingflag">
-			                    <span class="mp-list-bookingtext">
-			                        可订明日
-			                    </span>
-			                </span>
-			            </div>
-			            <div class="mp-list-productinfo mpg-flexbox-item mpf-border-bottom">
-			                <h4 class="mp-list-productname mpg-ellipsis2">
-			                    ${value.alt}
-			                </h4>
-		                <div class="mp-list-taglist">
-		                    <span class="mp-list-tagitemlight mpf-border-right">
-	                        ${value.local}
-		                    </span>
-		                    <span class="mp-list-tagitem mpf-border-right">
-	                        ${value.price}
-		                    </span>
-		                    <span class="mp-list-tagitem mpf-border-right">
-	                        ${value.shop}
-		                    </span>
-		                </div>
-	               
-		                <div class="mp-list-priceinfo">
-		                    <span class="mp-list-qunarprice">
-		                        ¥
-		                        <em>
-		                            ${value.unitPrice}
-		                        </em>
-		                    </span>
-		                    <span class="mp-list-priceflag">
-		                        起
-		                    </span>
-		                </div>
-		                <div class="mp-list-moreinfo">
-		                    <span class="mp-list-text mpf-border-left">
-	                        ${value.sold}
-		                    </span>
-		                </div>
-		            </div>
-		           <!--  <a href="javascript:;"
-		            mp-role="analytics" class="mp-list-link" title="【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游">
-		                【10点天天发】北京八达岭长城+鸟巢水立方纯玩一日游
-		            </a> -->
-    			</li>`;
-		        })
-		        document.getElementById("ticket-list").innerHTML = html;
-			},
+	export default {
+		props: ["listData"],
+		name:"listcon",
+		methods: {
 			handleClick: function() {
 				var oNav = document.querySelector(".js-tagfilter-inner");
 				var oTit = document.querySelector(".js-tagfilter-title");
 				var oChoose = document.querySelector(".js-mp-tagfilter-list");
 				var oNavList = document.querySelector(".js-mp-tagfilter-inner");
+				var oH = document.querySelector(".js-mp-targfilter");
 
 				if(oNav.style.display === "none") {
 					oNav.style.display = "block";
 					oTit.style.display = "none";
 					oChoose.style.display="none";
 					oNavList.style.display="none";
+					oH.style.display="block";
 				}else{
 					oNav.style.display = "none";
 					oTit.style.display = "block";
 					oChoose.style.display="block";
 					oNavList.style.display="block";
+					oH.style.display="none";
 				}
 			}
-			
 		},
 		mounted: function() {
-			this.$axios.get('/static/data.json'
-			  )
-			  .then(this.handleListDataSucc.bind(this))
-			  .catch(function (error) {
-			      console.log(error)
-			  })
+			var beforeScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+			 	window.addEventListener("scroll", function() {
+					
+		 		var afterScrollTop = document.body.scrollTop || document.documentElement.scrollTop,
+		 			delta = afterScrollTop - beforeScrollTop;
+		 			if(delta === 0) return false;
+                    var oNpm = document.querySelector(".js-mpw-fadein");
+                    if(delta>0){
+                    	oNpm.style.transform = "translate(0, 0.8rem)"
+                    }else{
+
+                    	oNpm.style.transform = "translate(0, 0)";
+                    }
+                    beforeScrollTop = afterScrollTop;
+			 	})
+			
+			this.myScroll = new IScroll("#wrapper", { scrollX: true, scrollY: false, mouseWheel: true });
+		},
+		updated: function() {
+			this.myScroll.refresh();
 		}
 	}
 </script>
@@ -244,11 +294,20 @@
 	    color: #fff;
 	    font-size: .28rem;
 	}
-	
+	.mp-tagfilter-list-inner {
+		overflow-x: auto; 
+		height: 0.8rem; 
+		overflow-y: hidden; 
+		height:1.15rem;
+	}
 	.mp-tagfilter-item {
 	    float: left;
 	    position: relative;
 	    padding: .08rem .08rem;
+	}
+	.mp-tagfilter-con {
+		width: 43rem; 
+		height:.8rem;
 	}
 	.mp-tagfilter-list-wrap {
 		position:absolute;
@@ -256,6 +315,9 @@
 		top: .7rem;
 		background:#ccc;
 		z-index:9;
+		overflow:auto; 
+		width: 102%; 
+		overflow-x: hidden;
 	}
 	.mp-tagfilter-list-wrap ul{
 		padding-right: .1rem;
@@ -284,7 +346,7 @@
 	    background: #e5e7e8;
 	}
 	.mp-tagfilter-list-Wrap {
-		position:relative;
+		position: relative;
 	}
 	/*con*/
 	.mp-list {
@@ -405,6 +467,10 @@
 	    width: auto !important;
 	    padding-bottom: .2rem;
 	    padding-top: .6rem!important;
+	    height: 0.9rem;
+	}
+	.mp-tagfilter-inner-first {
+		display: none;
 	}
 	.mp-tagfilter-unfold .mp-tagfilter-item {
 	    padding-top: .08rem;
@@ -430,5 +496,128 @@
 	.mp-tagfilter-list {
 	    max-height: 6rem;
 	    padding: .03rem .12rem;
+	}
+	/*footer*/
+	.mp-moreinfo {
+	    margin: .2rem 0;
+	    color: #00afc7;
+	    line-height: .82rem;
+	    text-align: center;
+	}
+	.mp-pagination {
+	    height: .7rem;
+	    line-height: .7rem;
+	}
+	div {
+	    display: block;
+	}
+	.mp-moreinfo {
+	    margin: .2rem 0;
+	    color: #00afc7;
+	    line-height: .82rem;
+	    text-align: center;
+	}
+	.mp-pagination a.mp-disable-btn {
+	    background: #bdbdbd;
+	    color: #fff;
+	    border: 0;
+	}
+	.mp-pagination a, .mp-pagination a:link, .mp-pagination a:visited, .mp-pagination a:hover, .mp-pagination a:active {
+	    display: inline-block;
+	    width: 1.4rem;
+	    border: .02rem solid #00afc7;
+	    background: #fff;
+	    color: #00afc7;
+	    line-height: .6rem;
+	    border-radius: .06rem;
+	}
+	.mp-pagination .mp-page-num {
+	    color: #212121;
+	    line-height: .6rem;
+	    padding: 0 15px;
+	}
+	.mp-pagination a, .mp-pagination a:link, .mp-pagination a:visited, .mp-pagination a:hover, .mp-pagination a:active {
+	    display: inline-block;
+	    width: 1.4rem;
+	    border: .02rem solid #00afc7;
+	    background: #fff;
+	    color: #00afc7;
+	    line-height: .6rem;
+	    border-radius: .06rem;
+	}
+	.mp-moreinfo .mp-page-text {
+	    padding-top: .2rem;
+	    line-height: .3rem;
+	    font-size: .3rem;
+	}
+	.mp-loading-container {
+	    height: 2rem;
+	    color: #666;
+	    line-height: 2rem;
+	    text-align: center;
+	    display: none;
+	}
+	.mp-tarfilter-itemInline {
+		display: inline;
+	}
+	.mp-typefilter {
+	    text-align: center;
+	    display: flex;
+	    justify-content: space-around;
+	}
+	.mp-typefilter-item {
+	    padding: .08rem .1rem 0;
+	    color: #fff;
+	}
+	.mpg-flexbox-layout {
+	    width: .02rem;
+	    flex:1;
+	}
+	.mp-typefilter-icon {
+	    display: inline-block;
+	    position: relative;
+	    height: .32rem;
+	    font-size: .32rem;
+	    vertical-align: top;
+	}
+	.mpg-iconfont {
+	    font-family: 'mpiconfont';
+	    speak: none;
+	    font-style: normal;
+	    font-weight: normal;
+	    font-variant: normal;
+	    text-transform: none;
+	    line-height: 1;
+	}
+	.mp-typefilter-name {
+	    overflow: hidden;
+	    height: .4rem;
+	    font-size: .24rem;
+	    line-height: .4rem;
+	}
+	.mp-typefilter-outer {
+	    position: relative;
+	    background: rgba(0,0,0,.8);
+	}
+	.mpw-dock {
+	    background: transparent none;
+	    z-index: 4;
+	}
+	.mpw-dock {
+	    position: fixed;
+	    z-index: 92;
+	    bottom: 0;
+	    right: 0;
+	    left: 0;
+	    width: 100%;
+	    transition: transform .3s ease-out;
+	}
+	.ticket-list-inner {
+		color: #333;
+	}
+	.mp-tagilter-listInner {
+		overflow-x: hidden; 
+		overflow-y: hidden; 
+		height: .8rem;
 	}
 </style>

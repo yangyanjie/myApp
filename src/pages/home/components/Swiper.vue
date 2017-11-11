@@ -1,14 +1,14 @@
 <template>
   <div class="home-swiper">
     <swiper :options="swiperOption">
-      <swiper-slide  v-for="item in swiperInfo" :key="item.id">
-        <router-link :to="item.link">
-          <div class="slide-container">
-            <img class="slide-img" :src="item.imgUrl" alt="">
-          </div>
-        </router-link>
-      </swiper-slide>
-      <div class="home-swiper-pagination"  slot="pagination"></div>
+        <swiper-slide  v-for="item in swiperInfo" :key="item.id">
+            <router-link :to="item.link">
+                <div class="slide-container">
+                    <img class="slide-img" :src="item.imgUrl" alt="">
+                </div>
+            </router-link>
+        </swiper-slide>
+        <div class="home-swiper-pagination"  slot="pagination"></div>
     </swiper> 
   </div>
 </template>
