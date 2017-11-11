@@ -10,7 +10,7 @@
   		</div>
   		<div class="mp-header-right" mp-role="right">
   			<a href="#" title="城市选择" class="mp-linkarea">
-  				<router-link to="/citylist" class="mp-nav-city">
+  				<router-link to="/" class="mp-nav-city">
   					北京
   					<i class="mp-arrow"></i>
   				</router-link>
