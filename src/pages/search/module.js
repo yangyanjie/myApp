@@ -24,7 +24,7 @@ export default {
 	
 	getters: {
 		changeSight: function(state){
-			alert(1);
+			alert(123);
 			return state;
 			/*console.log(this);
 			var change = document.getElementById('changeSight');
