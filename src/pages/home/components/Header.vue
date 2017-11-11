@@ -1,18 +1,19 @@
 <template>
   	<header class="mp-header">
-  		<a href="#" class="mp-header-left iconfont icon-return" ></a>
+  		<a href="#" class="mp-header-left iconfont icon-return" >
+  		</a>
   		<div class="mp-header-title" mp-role="title">
-  			<a href="#" class="mp-linkarea">
-  				<i class="mp-iconsearch iconfont icon-seach"></i>
+  			<router-link to="/search" class="mp-linkarea">
+  				<i class="mp-iconsearch iconfont icon-search"></i>
   				<span class="mp-single-line">输入城市/景点/游玩主题</span>
-  			</a>
+  			</router-link>
   		</div>
   		<div class="mp-header-right" mp-role="right">
   			<a href="#" title="城市选择" class="mp-linkarea">
-  				<span class="mp-nav-city">
+  				<router-link to="/citylist" class="mp-nav-city">
   					北京
   					<i class="mp-arrow"></i>
-  				</span>
+  				</router-link>
   			</a>
   		</div>
   	</header>
@@ -70,6 +71,9 @@
 	    line-height: .88rem;
 	    margin-right: .04rem;
 	    color: #fff;
+	}
+	.mp-nav-city{
+		color: #fff;
 	}
 	.mp-arrow {
 		display: inline-block;

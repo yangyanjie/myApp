@@ -23,6 +23,7 @@ export default {
             axios.get("/static/home.json")
             .then((res) => {
                 context.commit(SET_DATA, res.data.data);
+                //这里边的第二个参数传给了mutation的[SET_DATA]中的payload
             })
         }
     },
