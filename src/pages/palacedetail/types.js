@@ -1,0 +1,2 @@
+export const SET_DETAIL = "DETAIL_SET_DETAIL";
+export const AJAX_SET_DETAIL = "AJAX_SET_DETAILDATA";
