@@ -4,7 +4,9 @@ import Home from '@/pages/home/Home'
 import Activity from '@/pages/activity/Activity'
 import Tour from "@/pages/list/OneDayList"
 import Details from '@/pages/details/details'
-
+import ParkDetails from '@/pages/parkdetail/Park'
+import DetailSwiper from '@/pages/parkdetail/components/DetailSwiper'
+import SightMap from '@/pages/parkdetail/components/SightMap'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +31,21 @@ export default new Router({
       path: '/tour/details/:id?',
       name: 'details',
       component: Details
+    },
+    {
+      path: '/parkdetail',
+      name: 'parkdetail',
+      component: ParkDetails
+    },
+    {
+      path: '/detailswiper',
+      name: 'detailswiper',
+      component: DetailSwiper
+    },
+    {
+      path: '/sightmap',
+      name: 'sightmap',
+      component: SightMap
     }
   ]
 })

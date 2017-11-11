@@ -37,7 +37,7 @@
             },
             {
                 "id": "3",
-                "link":"/detail",
+                "link":"/parkdetail",
                 "title": "颐和园",
                 "price": "24.8",
                 "desc": "保存完整的一座皇家行宫御苑",
