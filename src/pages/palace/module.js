@@ -10,7 +10,6 @@ export default {
 	},
 	mutations: {
 		[SET_DATA](state, payload){
-			 //console.log(payload)
 			state.palaceData = payload.palace,
 			state.palaceWait = payload.wait,
 			state.palaceHot = payload.hot,
@@ -22,7 +21,6 @@ export default {
 			axios.get('/static/palace.json')
 				.then((response)=>{
 					context.commit(SET_DATA,response.data.data)
-					//console.log(response.data.data)
 				}) 
 			}
 	}
