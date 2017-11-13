@@ -33,7 +33,6 @@
 <script>
   require('../../../utils/iscroll-probe.js');
   export default {
-
     props:['tripListInfo'],
     mounted: function() {
       this.myScroll = new IScroll('#wrapper', { mouseWheel: true });
@@ -43,7 +42,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   #weekend-trip {
     width: 100%;
     height: auto;

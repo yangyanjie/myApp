@@ -58,8 +58,8 @@
 	    mapObj.addControl(geolocation);
 	    geolocation.getCurrentPosition();
 	    AMap.event.addListener(geolocation, 'complete', function(res){
-			var mpListentrance = document.getElementsByClassName("mp-listentrance")[0];
-			mpListentrance.innerHTML = res.addressComponent.province;
+			//var mpListentrance = document.getElementsByClassName("mp-listentrance")[0];
+			//mpListentrance.innerHTML = res.addressComponent.province;
 	    });
 	    AMap.event.addListener(geolocation, 'error', function(err){
 	    	var mpListentrance = document.getElementsByClassName("mp-listentrance")[0];

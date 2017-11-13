@@ -21,6 +21,7 @@
 	    	!this.listData.nav.length && this.getListData()
 	    },
 	    methods: mapActions({
+	    	
 	    	getListData: (dispatch) => {
 	    		dispatch(LIST_GETDATA)
 	    	}
