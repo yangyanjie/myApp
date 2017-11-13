@@ -22,9 +22,10 @@
 		},
 
 		computed: mapState({
-			palaceData:(state) => (
-				state.palace.palaceData
-			)
+			palaceData:(state) => {
+				console.log(state);
+				return state.palace.palaceData
+			}
 		}),
 		mounted(){
 			 !this.palaceData.length && this.getPalaceData();
