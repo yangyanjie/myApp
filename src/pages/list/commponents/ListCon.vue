@@ -207,7 +207,7 @@
 		}
 	}
 </script>
-<style >
+<style scoped>
 
 	.mp-header {
 	    z-index: 98;
