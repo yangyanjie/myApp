@@ -83,7 +83,7 @@
                 }
                 
                 this.topArr.map((value, index) => {
-                    if(this.scrolltop > value - 400) {
+                    if(this.scrolltop > value - 300) {
                         for(var i=0; i<this.$refs.mpList.children.length; i++) {
                             this.$refs.mpList.children[i].style.fontWeight = "100"
                         }
