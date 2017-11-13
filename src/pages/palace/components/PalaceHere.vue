@@ -13,7 +13,7 @@
 		    </div>
 		    <div class="mpg-flexbox" id="wrapper">
 				<div id="scroller">
-					<ul class="mp-list">
+					<ul class="mp-list-here">
 						<li class="mp-item clearfix" v-for="palace in palaceData" :key="palace.id" v-if="flag">
 							<router-link to="/palacedetail">
 								<div class="mp-item-img">
@@ -131,9 +131,10 @@
 		height: 4.5rem;
 		overflow: hidden;
 	}
-	.mp-list {
+	.mp-list-here {
 		height: 8rem;
 		overflow: hidden;
+		background:#fbdea3;
 	}
 	.mp-item{
 		height:2rem;
