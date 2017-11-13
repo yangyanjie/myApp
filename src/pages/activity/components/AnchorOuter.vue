@@ -83,7 +83,7 @@
                 }
                 
                 this.topArr.map((value, index) => {
-                    if(this.scrolltop > value - 400) {
+                    if(this.scrolltop > value - 300) {
                         for(var i=0; i<this.$refs.mpList.children.length; i++) {
                             this.$refs.mpList.children[i].style.fontWeight = "100"
                         }
@@ -94,7 +94,7 @@
             handleClick: function(e) {
                 for(var j=0; j<this.$refs.mpList.children.length; j++){
                             
-                    if(e.target == this.$refs.mpList.children[j].children[0]) {
+                    if(e.target === this.$refs.mpList.children[j].children[0]) {
 
                         var scrollT = document.body.scrollTop || document.documentElement.scrollTop;
 
